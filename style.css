@@ -1,0 +1,17 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+    position:relative;
+    background-color: #15192f;
+}
+ 
+
+/*mobile device*/
+@media screen and(min-width:320px) and (max-width:480px) {
+    
+}
+
