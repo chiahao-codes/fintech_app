@@ -11,9 +11,22 @@ body{
     background-color: #0b3975;
 }
  
+body header{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
 
 /*mobile device*/
 @media screen and(min-width:320px) and (max-width:480px) {
-    
+    body header #searchbar{
+        font-size: 18px;
+        width:200px;
+        color:white;
+        border-color: white;
+    }
 }
 
