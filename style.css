@@ -25,9 +25,9 @@ body header{
 
 /*mobile device*/
 @media screen and(min-width:320px) and (max-width:480px) {
-    body header #searchbar{
+    body header input{
         font-size: 18px;
-        width:85%;
+        width:90%;
         height: 100%;
         color:white;
         border-color: white;
