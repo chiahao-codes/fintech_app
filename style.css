@@ -42,7 +42,7 @@ display: none;
     font-family: "Noto Sans", sans-serif;
   }
 
-  body header input #cursor{
+  body header #cursor{
     position:absolute;
     width: 7px;
 	height: 80%;
