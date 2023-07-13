@@ -24,7 +24,7 @@ display: none;
 @media screen and (min-width:320px) and (max-width: 480px) {
   body header {
     width: 100%;
-    height: 150px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
