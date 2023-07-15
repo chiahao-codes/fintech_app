@@ -68,7 +68,7 @@ width: 7px;
 	top: 10%;
     background-color: rgb(255, 92, 32);
     animation-name: blink;
-	animation-duration: 500ms;
+	animation-duration: 50ms;
 	animation-iteration-count: infinite;
 	opacity: 1;
 }
