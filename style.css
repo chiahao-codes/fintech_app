@@ -62,10 +62,11 @@ max-height: 18px;
 }
 
 body header #box h2::after{
+  content: "";
+  display: inline-block;
 width: 7px;
 	height: 24px;
     left: 2px;
-	top: 10%;
     background-color: rgb(255, 92, 32);
     animation-name: blink;
 	animation-duration: 50ms;
