@@ -33,30 +33,44 @@ display: none;
     overflow-x: hidden;
   }
 
-  body header input {
-    font-size: 18px;
-    width: 90%;
+  body header #box {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 0 50px 0 10px;
+    border: 1px solid white;
+  border-radius: 10px;
+    width: 80%;
     height: 100%;
     color: black;
     border-color: white;
     font-family: "Noto Sans", sans-serif;
   }
 
-  body header #cursor{
-    position:absolute;
-    width: 7px;
-	height: 80%;
-    left: 5px;
-	top: 10%;
-    background-color: coral;
-    animation-name: blink;
-	animation-duration: 800ms;
-	animation-iteration-count: infinite;
-	opacity: 1;
+  body header #box h2{
+  display: block;
+line-height: 18px;
+max-height: 18px;
+  outline:none;
+  caret-color:transparent;
+  overflow: hidden;
   }
 
   @keyframes blink {
 	from { opacity: 1; }
 	to { opacity: 0; }
 }
+
+body header #box h2::after{
+width: 7px;
+	height: 24px;
+    left: 2px;
+	top: 10%;
+    background-color: rgb(255, 92, 32);
+    animation-name: blink;
+	animation-duration: 500ms;
+	animation-iteration-count: infinite;
+	opacity: 1;
+}
+ 
 }
