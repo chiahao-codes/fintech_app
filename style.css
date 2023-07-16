@@ -40,7 +40,7 @@ body {
     font-family:inherit;
     padding: .5px;
     height: 25px;
-    width: 35px;
+    width: 100px;
     outline: none;
     caret-color: transparent;
     overflow: hidden;
@@ -57,7 +57,7 @@ body {
     }
   }
 
-  body header #box h2::after {
+  body header #box h2 span::after {
     position:relative;
     content: "";
     display: inline-block;
