@@ -34,13 +34,12 @@ body {
     overflow: hidden;
   }
 
-
   body header h2 {
     display: block;
     font-family:inherit;
     padding: .5px;
     height: 25px;
-    width: 180px;
+    width: 200px;
     outline: none;
     color:white;
     caret-color: transparent;
