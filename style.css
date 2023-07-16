@@ -58,12 +58,10 @@ body {
   }
 
   body header h2::after{
-    position:relative;
     content: "";
     display: inline-block;
     width: 7px;
     height: 24px;
-    left: 2px;
     background-color: rgb(255, 92, 32);
     animation-name: blink;
     animation-duration: 500ms;
