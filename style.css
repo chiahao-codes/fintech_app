@@ -58,7 +58,7 @@ body {
     }
   }
 
-  body header #box h2 span::after {
+  body header h2 span::after {
     position:relative;
     content: "";
     display: inline-block;
