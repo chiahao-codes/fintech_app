@@ -35,7 +35,7 @@ body {
   }
 
   body header h2 {
-    display: block;
+    display: inline-block;
     font-family:inherit;
     padding: .5px;
     height: 35px;
@@ -48,6 +48,7 @@ body {
     text-overflow: "";
   }
 
+
   @keyframes blink {
     from {
       opacity: 1;
@@ -59,7 +60,7 @@ body {
 
   body header h2::after{
     content: "";
-    display: inline-block;
+    display: inline;
     width: 7px;
     height: 24px;
     background-color: rgb(255, 92, 32);
