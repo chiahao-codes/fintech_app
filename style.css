@@ -49,14 +49,6 @@ body {
     text-overflow: "";
   }
 
-  body header h2 span{
-    width:100%;
-    height:100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: "";
-  }
-
   @keyframes blink {
     from {
       opacity: 1;
