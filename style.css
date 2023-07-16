@@ -49,6 +49,10 @@ body {
   }
 
 
+  body header h2 span{
+    display: inline-block;
+  }
+
   @keyframes blink {
     from {
       opacity: 1;
@@ -60,7 +64,7 @@ body {
 
   body header h2::after{
     content: "";
-    display: inline;
+    display: inline-block;
     width: 7px;
     height: 24px;
     background-color: rgb(255, 92, 32);
