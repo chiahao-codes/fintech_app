@@ -86,7 +86,7 @@ body {
     top:auto;
     bottom:auto;
     width: 7px;
-    height: 32px;
+    height: 30px;
     background-color: rgb(236, 87, 33);
     animation-name: blink;
     animation-duration: 500ms;
