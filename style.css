@@ -52,7 +52,7 @@ body {
     color:var(--cold-white);
     border:1px solid var(--cold-white);
     border-radius: 5px;
-  
+    cursor: pointer;
     caret-color: transparent;
     box-shadow: 0 .5px 5px rgb(23, 23, 23);
     overflow: hidden;
@@ -74,6 +74,7 @@ body {
       opacity: 0;
     }
   }
+
 
   body header h2::after{
     content: "";
