@@ -79,8 +79,8 @@ body {
     content: "";
     display: inline-block;
     width: 7px;
-    height: 24px;
-    background-color: rgb(255, 92, 32);
+    height: 99%;
+    background-color: rgb(236, 87, 33);
     animation-name: blink;
     animation-duration: 500ms;
     animation-iteration-count: infinite;
