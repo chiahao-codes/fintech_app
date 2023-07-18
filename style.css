@@ -79,7 +79,7 @@ body {
     content: "";
     display: inline-block;
     position: relative;
-    bottom:-1px;
+    bottom:-1.5px;
     width: 7px;
     height: 28px;
     background-color: rgb(236, 87, 33);
