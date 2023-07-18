@@ -1,3 +1,3 @@
 //if KeyboardEvent.key = " ", remove the whitespace.
-let text = document.querySelector("header h2").innerText;
-console.log(text);
+let tickerText = document.querySelector("header h2");
+console.log(tickerText);
