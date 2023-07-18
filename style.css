@@ -80,8 +80,9 @@ body {
     display: inline-block;
     position: relative;
     bottom:-2px;
+    left:2px;
     width: 7px;
-    height: 28px;
+    height: 25px;
     background-color: rgb(236, 87, 33);
     animation-name: blink;
     animation-duration: 500ms;
