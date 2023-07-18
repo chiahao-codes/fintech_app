@@ -82,6 +82,9 @@ body {
   body header h2::after{
     content: "";
     display: inline-block;
+    position:relative;
+    top:auto;
+    bottom:auto;
     width: 7px;
     height: 90%;
     background-color: rgb(236, 87, 33);
