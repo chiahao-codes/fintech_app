@@ -64,8 +64,8 @@ body {
   body header h2 span{
     display: inline-block;
     height: 100%;
-    position:relative;
-    top: -1.5px;
+ 
+  
   }
 
   @keyframes blink {
@@ -80,8 +80,6 @@ body {
   body header h2::after{
     content: "";
     display: inline-block;
-    position:relative;
-    top:2px;
     width: 7px;
     height: 28px;
     background-color: rgb(236, 87, 33);
