@@ -67,7 +67,7 @@ body {
     display: inline-block;
     height: 100%;
     position:relative;
-    top: -3px;
+    top: -2px;
   }
 
   @keyframes blink {
