@@ -64,6 +64,7 @@ body {
 
   body header h2 span{
     display: inline-block;
+    height: 100%;
   }
 
   @keyframes blink {
