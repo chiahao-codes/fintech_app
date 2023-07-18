@@ -83,7 +83,7 @@ body {
     content: "";
     display: inline-block;
     width: 7px;
-    height: 99%;
+    height: 90%;
     background-color: rgb(236, 87, 33);
     animation-name: blink;
     animation-duration: 500ms;
