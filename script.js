@@ -1,8 +1,8 @@
 //if KeyboardEvent.key = " ", remove the whitespace.
 
-
+let tickerText = document.querySelector("header h2");
 tickerText.addEventListener("click", () => {
-    let tickerText = document.querySelector("header h2");
+    
     if (tickerText.innerText === "Enter ticker...") {
         tickerText.innerText = "";
     }
