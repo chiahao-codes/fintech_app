@@ -6,6 +6,13 @@
   padding: 0;
 }
 
+root {
+  --nyc-blue:#080e2c;
+  --mint-color:#44eabb;
+  --cold-white:#f3fdfb;
+  --aqua-breeze:#d8e8e4;
+}
+
 body {
   display: none;
 }
@@ -18,7 +25,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     position: relative;
-    background-color: #0b3975;
+    background-color: var(--nyc-blue);
   }
 }
 
@@ -41,14 +48,14 @@ body {
     height: 35px;
     width: 250px;
     outline: none;
-    color:white;
-    border:1px solid white;
+    color:var(--cold-white);
+    border:1px solid var(--cold-white);
     border-radius: 5px;
     background-clip: padding-box;
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding-box;
     caret-color: transparent;
-    box-shadow: 0 .5px 5px rgb(54, 53, 53);
+    box-shadow: 0 .5px 5px rgb(23, 23, 23);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: "";
