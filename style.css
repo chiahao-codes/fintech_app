@@ -6,7 +6,7 @@
   padding: 0;
 }
 
-root {
+:root {
   --nyc-blue:#080e2c;
   --mint-color:#44eabb;
   --cold-white:#f3fdfb;
