@@ -43,6 +43,7 @@ body {
 
   body header h2 {
     display: inline-block;
+    position:relative;
     font-family:inherit;
     padding: 1px;
     height: 35px;
@@ -65,6 +66,8 @@ body {
   body header h2 span{
     display: inline-block;
     height: 100%;
+    position:relative;
+    top: -3px;
   }
 
   @keyframes blink {
