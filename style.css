@@ -48,7 +48,7 @@ body {
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding-box;
     caret-color: transparent;
-    box-shadow: 0 3px 1px 1px black;
+    box-shadow: 0 1px 1px black;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: "";
