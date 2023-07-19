@@ -21,6 +21,7 @@ h2Box.addEventListener("keydown", (e) => {
 
     if (arrCopy.length > 0) {
         for (let i of arrCopy) {
+            console.log(i);
             if (i.tagName === "BR") {
                 let index = arrCopy.indexOf(i);
                 arrCopy.splice(index, 1);
