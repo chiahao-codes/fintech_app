@@ -4,15 +4,15 @@ let regExp = /[^a-z.A-Z]/;
 
 let tickerText = document.querySelector("header h2");
 console.log(tickerText);
-tickerText.addEventListener("click", () => {
 
+tickerText.addEventListener("click", () => {
     if (tickerText.innerText === "Enter ticker...") {
         tickerText.innerText = "";
     }
     return
 })
 
-tickerText.addEventListener("focus", () => {
+tickerText.addEventListener("keydown", () => {
     if (regExp.test(tickerText.innerText)) {
       alert("Invalid entry")
     tickerText.innerText = "";
