@@ -57,6 +57,8 @@ body {
     box-shadow: 0 .5px 5px rgb(23, 23, 23);
     overflow: hidden;
     white-space: nowrap;
+    -webkit-white-space:nowrap;
+    -moz-white-space:nowrap;
     text-overflow: "";
   }
 
