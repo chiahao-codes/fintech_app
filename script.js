@@ -20,6 +20,7 @@ tickerText.addEventListener("keydown", (e) => {
 
 tickerText.addEventListener("keyup", (e) => {
     let h2InnerHtml = tickerText.innerHTML;
+    console.log(h2InnerHtml);
     if (h2InnerHtml.includes("<br>")) {
         h2InnerHtml.replace(/<br>/g, "");
     }
