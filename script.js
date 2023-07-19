@@ -1,5 +1,3 @@
-//if KeyboardEvent.key = " ", remove the whitespace.
-
 let regExp = /[^a-z.A-Z]/;
 
 let tickerText = document.querySelector("header h2");
@@ -19,3 +17,11 @@ tickerText.addEventListener("keydown", (e) => {
     }
   return;
 });
+
+tickerText.addEventListener("keyup", (e) => {
+    let h2InnerHtml = tickerText.innerHTML;
+    if (h2InnerHtml.includes("<br>")) {
+        h2InnerHtml.replace(/<br>/g, "");
+    }
+
+})
