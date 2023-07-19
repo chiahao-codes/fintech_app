@@ -13,16 +13,6 @@ h2Box.addEventListener("keydown", (e) => {
         e.preventDefault();
         alert("Invalid entry")
     }
-    let h2Children = h2Box.children;
-    if (e.key === "Enter" && h2Children.length > 0) {
-      for (let i = 0; i < h2Children.length; i++) {
-        let curr = h2Children[i];
-        if (curr.outerHTML === "<br>") {
-          curr.remove(i);
-        }
-      }
-      console.log(h2Children);
-    }
         return; 
 });
 
@@ -31,7 +21,7 @@ h2Box.addEventListener("keyup", (e) => {
     //remove <br>
     let brElement = document.querySelector("h2 br");
     
-  if ((e.key == "Backspace" && brElement)) {
+  if (e.key == "Backspace" && brElement || e.key == "Enter" && brElement) {
     brElement.remove();
     console.log(h2Box);
     }
