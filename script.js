@@ -12,24 +12,24 @@ h2Box.addEventListener("click", () => {
 
 h2Box.addEventListener("keydown", (e) => {
     let h2Children = h2Box.children;
-    
+    let arrCopy = Array.from(h2Children);
+
     if (regExp.test(e.key)) {
         e.preventDefault();
         alert("Invalid entry")
     }
 
-    if (h2Children.length > 0) {
-        for (let i of h2Children) {
-            console.log(i);
-            if (i.outerHTML == "<br>") {
-                let index = h2Children.indexOf(i);
-                h2Children.splice(index, 1);
+    if (arrCopy.length > 0) {
+        for (let i = 0; i < arrCopy.length; i++) {
+            let curr = arrCopy[i];
+            if (curr.outerHTML == "<br>") {
+                arrCopy.splice(i, 1);
             }
         }
        
         console.log("<br> deleted...")
     }
     
-
+    h2Children = arrCopy;
     return h2Children;
 });
