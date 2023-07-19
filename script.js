@@ -27,6 +27,7 @@ h2Box.addEventListener("keydown", (e) => {
             }
         }
         h2Children = arrCopy;
+        console.log("<br> deleted...")
     }
     
 
