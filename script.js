@@ -18,9 +18,7 @@ tickerText.addEventListener("keydown", (e) => {
         alert("Invalid entry")
     }
 
-    if (h2InnerHtml.includes("<br>")) {
-        h2InnerHtml.replace("<br>", "<span></span>");
-    }
+   
 
   return;
 });
