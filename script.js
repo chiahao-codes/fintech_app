@@ -17,7 +17,8 @@ tickerText.addEventListener("keydown", (e) => {
         e.preventDefault();
         alert("No whitespaces");
     }
-    if (regExp.test(tickerText.innerText)) {
+
+    if (regExp.test(e.key)) {
       alert("Invalid entry")
     tickerText.innerText = "";
   }
