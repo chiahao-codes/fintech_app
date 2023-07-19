@@ -23,4 +23,5 @@ h2Box.addEventListener("keyup", (e) => {
     if (e.key == "Backspace" && brElement) {
         brElement.remove();
     }
+    return
 })
