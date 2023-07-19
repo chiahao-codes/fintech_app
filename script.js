@@ -1,5 +1,4 @@
 let regExp = /[^a-z.A-Z]/;
-
 let h2Box = document.querySelector("header h2");
 
 h2Box.addEventListener("click", () => {
@@ -14,7 +13,6 @@ h2Box.addEventListener("keydown", (e) => {
         e.preventDefault();
         alert("Invalid entry")
     }
-
     return 
 });
 
@@ -22,7 +20,7 @@ h2Box.addEventListener("keydown", (e) => {
 h2Box.addEventListener("keyup", (e) => {
     //remove <br>
     let brElement = document.querySelector("h2 br");
-    if (e.key === "Backspace" && brElement) {
+    if (brElement) {
         brElement.remove();
     }
 })
