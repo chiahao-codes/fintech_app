@@ -22,7 +22,7 @@ h2Box.addEventListener("keyup", (e) => {
     let brElement = document.querySelector("h2 br");
     if (e.key == "Backspace" && brElement || e.key === "Enter" ) {
         brElement.remove();
-        
+        console.log(h2Box)
     }
     return
 })
