@@ -19,7 +19,7 @@ h2Box.addEventListener("keydown", (e) => {
 //mozilla hack for getting rid of <br>;
 h2Box.addEventListener("keyup", (e) => {
     //remove <br>
-    let brElem = document.querySelector("h2 br");
+    let brElement = document.querySelector("h2 br");
   if ((e.key == "Backspace" && brElement) || (e.key === "Enter" && brElement)) {
     brElement.remove();
     console.log(h2Box);
