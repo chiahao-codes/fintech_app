@@ -12,22 +12,22 @@ h2Box.addEventListener("click", () => {
 
 h2Box.addEventListener("keydown", (e) => {
     let h2Children = h2Box.children;
-    let arrCopy = Array.from(h2Children);
+    
 
     if (regExp.test(e.key)) {
         e.preventDefault();
         alert("Invalid entry")
     }
 
-    if (arrCopy.length > 0) {
-        for (let i of arrCopy) {
+    if (h2Children.length > 0) {
+        for (let i of h2Children) {
             console.log(i);
-            if (i.tagName === "BR") {
-                let index = arrCopy.indexOf(i);
-                arrCopy.splice(index, 1);
+            if (i.outerHTML == "<br>") {
+                let index = h2Children.indexOf(i);
+                h2Children.splice(index, 1);
             }
         }
-        h2Children = arrCopy;
+       
         console.log("<br> deleted...")
     }
     
