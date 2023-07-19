@@ -19,14 +19,9 @@ h2Box.addEventListener("keydown", (e) => {
 //mozilla hack for getting rid of <br>;
 h2Box.addEventListener("keyup", (e) => {
     //remove <br>
-    let brElement = document.querySelector("h2 br");
     let brNodeList = document.querySelectorAll("h2 > br");
     
-  if (e.key == "Backspace" && brElement) {
-    brElement.remove();
-    console.log(h2Box);
-    }
-    if (e.key == "Enter" && brNodeList.length > 0) {
+    if (e.key == "Backspace" && brNodeList.length>0||e.key == "Enter" && brNodeList.length > 0) {
         brNodeList.forEach((ele) => {
             if (ele.outerHTML === "<br>") {
                 ele.remove()
@@ -38,6 +33,11 @@ h2Box.addEventListener("keyup", (e) => {
 })
 
 /**
+ * let brElement = document.querySelector("h2 br");
+ *  if ( brElement) {
+    brElement.remove();
+    console.log(h2Box);
+    }
  * let brElem = document.querySelector("h2 br");
  *   if (e.key == "Backspace" && brElement || e.key === "Enter" && brElement) {
         brElement.remove();
