@@ -39,6 +39,8 @@ body {
     position: relative;
     top: 50px;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: "";
   }
 
   body header h2 {
