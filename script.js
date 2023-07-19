@@ -13,9 +13,6 @@ h2Box.addEventListener("keydown", (e) => {
         e.preventDefault();
         alert("Invalid entry")
     }
-    if (e.key === "Enter") {
-        console.log(h2Box)
-    }
         return; 
 });
 
@@ -23,8 +20,9 @@ h2Box.addEventListener("keydown", (e) => {
 h2Box.addEventListener("keyup", (e) => {
     //remove <br>
     let brElement = document.querySelector("h2 br");
-    if (e.key == "Backspace" && brElement) {
+    if (e.key == "Backspace" && brElement || e.key === "Enter" ) {
         brElement.remove();
+        
     }
     return
 })
