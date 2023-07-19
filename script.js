@@ -20,12 +20,21 @@ h2Box.addEventListener("keydown", (e) => {
 h2Box.addEventListener("keyup", (e) => {
     //remove <br>
     let brElement = document.querySelector("h2 br");
+    let brNodeList = document.querySelectorAll("h2 > br");
     
-  if (e.key == "Backspace" && brElement || e.key == "Enter" && brElement) {
+  if (e.key == "Backspace" && brElement) {
     brElement.remove();
     console.log(h2Box);
     }
-    return;
+    if (e.key == "Enter" && brNodeList.length > 0) {
+        brNodeList.forEach((ele) => {
+            if (ele.outerHTML === "<br>") {
+                ele.remove()
+            }
+        })
+        console.log(h2Box)
+    }
+        return;
 })
 
 /**
