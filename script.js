@@ -9,11 +9,14 @@ h2Box.addEventListener("click", () => {
 })
 
 h2Box.addEventListener("keydown", (e) => {
-    if (regExp.test(e.key) || e.key === "Enter") {
+    if (regExp.test(e.key)) {
         e.preventDefault();
         alert("Invalid entry")
     }
-    return 
+    if (e.key === "Enter") {
+        console.log(h2Box)
+    }
+        return; 
 });
 
 //mozilla hack for getting rid of <br>;
