@@ -19,7 +19,13 @@ h2Box.addEventListener("keydown", (e) => {
 });
 
 h2Box.addEventListener("keyup", (e) => {
-    if (e.key === "Backspace") {
-        console.log(h2Box);
+    let h2Children = h2Box.children;
+    if (e.key === "Backspace" && h2Children.length>0) {
+        //iterate 
+        for (let ele of h2Children) {
+            if (ele.outerHTML === "<br>") {
+                console.log(ele);
+            }
+        }
     }
 })
