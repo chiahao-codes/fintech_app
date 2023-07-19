@@ -13,14 +13,9 @@ tickerText.addEventListener("click", () => {
 })
 
 tickerText.addEventListener("keydown", (e) => {
-    if (e.key === " ") {
-        e.preventDefault();
-        alert("No whitespaces");
-    }
-
     if (regExp.test(e.key)) {
-      alert("Invalid entry")
-    tickerText.innerText = "";
-  }
+        e.preventDefault();
+        alert("Invalid entry")
+    }
   return;
 });
