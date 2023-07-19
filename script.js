@@ -11,18 +11,16 @@ tickerText.addEventListener("click", () => {
 })
 
 tickerText.addEventListener("keydown", (e) => {
+    let h2InnerHtml = tickerText.innerHTML;
+
     if (regExp.test(e.key)) {
         e.preventDefault();
         alert("Invalid entry")
     }
-  return;
-});
 
-tickerText.addEventListener("keyup", (e) => {
-    let h2InnerHtml = tickerText.innerHTML;
-    console.log(h2InnerHtml);
     if (h2InnerHtml.includes("<br>")) {
-        h2InnerHtml.replace(/<br>/g, "");
+      h2InnerHtml.replace(/<br>/g, "");
     }
 
-})
+  return;
+});
