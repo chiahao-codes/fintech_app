@@ -15,15 +15,24 @@ h2Box.addEventListener("keydown", (e) => {
     alert("Invalid entry");
   }
 
-  if (
-    (e.key == "Backspace" && h2Children.length > 0) ||
-    (e.key == "Enter" && h2Children.length > 0)
-  ) {
-    for (let i = 0; i < h2Children.length; i++) {
-      h2Children[i].remove();
+  return;
+});
+
+h2Box.addEventListener("keyup", (e) => {
+  //remove <br>
+    let brNodeList = document.querySelectorAll("h2 > br");
+    let divBr = document.querySelector("h2 > div");
+
+    if ((e.key == "Backspace" && brNodeList.length > 0 || e.key == "Enter" && brNodeList.length>0)) {
+      for (let i = 0; i < brNodeList.length; i++) {
+        brNodeList[i].remove();
+      }
     }
-    console.log(h2Box);
-  }
+    
+    if (divBr) {
+        divBr.remove()
+    }
+
   return;
 });
 
@@ -31,12 +40,7 @@ h2Box.addEventListener("keydown", (e) => {
 
 /**
  *   
- * h2Box.addEventListener("keyup", (e) => {
-  //remove <br>
-  //let brNodeList = document.querySelectorAll("h2 > br");
-
-  return;
-});
+ * 
  *  brNodeList.forEach((ele) => {
       if (ele.outerHTML === "<br>") {
         ele.remove();
