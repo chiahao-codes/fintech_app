@@ -20,11 +20,14 @@ h2Box.addEventListener("keydown", (e) => {
 h2Box.addEventListener("keyup", (e) => {
     //remove <br>
     let brElement = document.querySelector("h2 br");
-  if ((e.key == "Backspace" && brElement) || (e.key === "Enter" && brElement)) {
+  if ((e.key == "Backspace" && brElement)) {
     brElement.remove();
     console.log(h2Box);
-  }
-    return
+    }
+    if (e.key === "Enter" && brElement) {
+        console.log(h2Box);
+    }
+    return;
 })
 
 /**
