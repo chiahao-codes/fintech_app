@@ -12,7 +12,11 @@ tickerText.addEventListener("click", () => {
     return
 })
 
-tickerText.addEventListener("keydown", () => {
+tickerText.addEventListener("keydown", (e) => {
+    if (e.key === " ") {
+        e.preventDefault();
+        alert("No whitespaces");
+    }
     if (regExp.test(tickerText.innerText)) {
       alert("Invalid entry")
     tickerText.innerText = "";
