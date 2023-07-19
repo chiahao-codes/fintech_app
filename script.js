@@ -19,7 +19,7 @@ tickerText.addEventListener("keydown", (e) => {
     }
 
     if (h2InnerHtml.includes("<br>")) {
-      h2InnerHtml.replace(/<br>/g, "");
+        h2InnerHtml.replace("<br>", "<span></span>");
     }
 
   return;
