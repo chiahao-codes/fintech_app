@@ -5,11 +5,17 @@ h2Box.addEventListener("click", () => {
   if (h2Box.innerText === "Enter ticker...") {
     h2Box.innerText = "";
   }
+
+  //place cursor at the end of text nodes;
+  /**
+     * let range = new Range();
+    range.setSt
+     */
+
   return;
 });
 
 h2Box.addEventListener("keydown", (e) => {
-  let h2Children = h2Box.children;
   if (regExp.test(e.key)) {
     e.preventDefault();
     alert("Invalid entry");
@@ -26,9 +32,11 @@ h2Box.addEventListener("keyup", (e) => {
     if ((e.key == "Backspace" && brNodeList.length > 0 || e.key == "Enter" && brNodeList.length>0)) {
       for (let i = 0; i < brNodeList.length; i++) {
         brNodeList[i].remove();
-      }
+        }
+        console.log(h2Box)
     }
-    
+
+    //Edge Case: chrome browser
     if (divBr) {
         divBr.remove()
     }
@@ -36,14 +44,7 @@ h2Box.addEventListener("keyup", (e) => {
   return;
 });
 
-//mozilla hack for getting rid of <br>;
+
 
 /**
- *   
- * 
- *  brNodeList.forEach((ele) => {
-      if (ele.outerHTML === "<br>") {
-        ele.remove();
-      }
-    });
  */
