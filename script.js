@@ -7,10 +7,7 @@ h2Box.addEventListener("click", () => {
   }
     let h2ChildNodes = h2Box.childNodes;
     if (h2ChildNodes.length > 0) {
-        let range = document.createRange();
-        let textNode = h2ChildNodes[0];
-        range.setStartAfter(textNode);
-        range.setEndAfter(textNode);
+        window.getSelection().collapseToEnd();
     }
   console.log(h2Box);
   return;
