@@ -41,8 +41,8 @@ h2Box.addEventListener("keyup", (e) => {
     if (divBr) {
         divBr.remove()
     }
-
-    if (regExpDots.test(h2Box.innerText) === true) {
+    console.log(h2Box.innerText);
+    if (regExpDots.test(h2Box.innerText) === false) {
         e.preventDefault();
         alert("invalid entry:'.'")
     }
