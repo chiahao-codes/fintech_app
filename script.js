@@ -24,8 +24,9 @@ h2Box.addEventListener("keydown", (e) => {
         let h2ChildNodeText = h2ChildNodes[0].textContent;
         let lastChar = h2ChildNodeText.charAt(h2ChildNodeText.length - 1);
         if (lastChar === ".") {
-           //unfocus element
             alert("Invalid entry");
+            let h2TextUpdated = h2ChildNodeText.replace(lastChar, "");
+            h2ChildNodes[0].textContent = h2TextUpdated;
         }
     }
   return;
