@@ -1,12 +1,12 @@
-let regExp = /[^a-z.A-Z]/;
-let h2Box = document.querySelector("header h2");
+const regExp = /[^a-z.A-Z]/;
+const h2Box = document.querySelector("header h2");
+const h2ChildNodes = h2Box.childNodes;
 
 h2Box.addEventListener("click", () => {
   if (h2Box.innerText === "Enter ticker...") {
     h2Box.innerText = "";
     }
     //set caret position after text node
-    let h2ChildNodes = h2Box.childNodes;
     if (h2ChildNodes.length > 0) {
         let selection = window.getSelection();
         selection.setPosition(h2ChildNodes[0], h2ChildNodes[0].length);
@@ -20,7 +20,11 @@ h2Box.addEventListener("keydown", (e) => {
     e.preventDefault();
     alert("Invalid entry");
   }
-
+    if (h2ChildNodes.length > 0) { 
+        let h2ChildNodeText = h2ChildNodes[0].textContent;
+        let lastChar = h2ChildNodeText.charAt(h2ChildNodeText.length - 1);
+        console.log(lastChar)
+    }
   return;
 });
 
