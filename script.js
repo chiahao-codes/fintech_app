@@ -4,7 +4,8 @@ let h2Box = document.querySelector("header h2");
 h2Box.addEventListener("click", () => {
   if (h2Box.innerText === "Enter ticker...") {
     h2Box.innerText = "";
-  }
+    }
+    //set caret position after text node
     let h2ChildNodes = h2Box.childNodes;
     if (h2ChildNodes.length > 0) {
         let selection = window.getSelection();
@@ -43,7 +44,3 @@ h2Box.addEventListener("keyup", (e) => {
   return;
 });
 
-
-
-/**
- */
