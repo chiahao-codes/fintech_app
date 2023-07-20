@@ -23,7 +23,10 @@ h2Box.addEventListener("keydown", (e) => {
     if (h2ChildNodes.length > 0) { 
         let h2ChildNodeText = h2ChildNodes[0].textContent;
         let lastChar = h2ChildNodeText.charAt(h2ChildNodeText.length - 1);
-        console.log(lastChar)
+        if (lastChar === ".") {
+            e.preventDefault();
+            alert("Invalid entry");
+        }
     }
   return;
 });
