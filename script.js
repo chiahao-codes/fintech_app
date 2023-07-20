@@ -5,7 +5,7 @@ h2Box.addEventListener("click", () => {
   if (h2Box.innerText === "Enter ticker...") {
     h2Box.innerText = "";
   }
-
+  console.log(h2Box);
   //place cursor at the end of text nodes;
   /**
      * let range = new Range();
