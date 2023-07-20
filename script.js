@@ -1,5 +1,5 @@
 const regExp = /[^a-z.A-Z]/;
-const regExpDots = /..\b/;
+const regExpDots = /../;
 const h2Box = document.querySelector("header h2");
 const h2ChildNodes = h2Box.childNodes;
 
