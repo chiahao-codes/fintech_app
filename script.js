@@ -1,5 +1,5 @@
 const regExp = /[^a-z.A-Z]/;
-const regExpDots = /../;
+const regExpDots = /[..]/;
 const h2Box = document.querySelector("header h2");
 const h2ChildNodes = h2Box.childNodes;
 
@@ -42,7 +42,7 @@ h2Box.addEventListener("keyup", (e) => {
         divBr.remove()
     }
     console.log(h2Box.innerText);
-    if (regExpDots.test(h2Box.innerText) === false) {
+    if (regExpDots.test(h2Box.innerText) === true) {
         e.preventDefault();
         alert("invalid entry:'.'")
     }
