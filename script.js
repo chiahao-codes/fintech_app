@@ -17,7 +17,7 @@ h2Box.addEventListener("click", () => {
 });
 
 h2Box.addEventListener("keydown", (e) => {
-  if (regExp.test(e.key) || regExpDots.test(h2Box.innerText)) {
+  if (regExp.test(e.key)) {
     e.preventDefault();
     alert("Invalid entry");
   }
@@ -40,6 +40,11 @@ h2Box.addEventListener("keyup", (e) => {
     //Edge Case: chrome browser
     if (divBr) {
         divBr.remove()
+    }
+
+    if (regExpDots.test(h2Box.innerText)) {
+        e.preventDefault();
+        alert("invalid entry:'.'")
     }
 
   return;
