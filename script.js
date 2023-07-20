@@ -1,4 +1,5 @@
 const regExp = /[^a-z.A-Z]/;
+const regExpDots = /../;
 const h2Box = document.querySelector("header h2");
 const h2ChildNodes = h2Box.childNodes;
 
@@ -16,19 +17,11 @@ h2Box.addEventListener("click", () => {
 });
 
 h2Box.addEventListener("keydown", (e) => {
-  if (regExp.test(e.key)) {
+  if (regExp.test(e.key) || regExpDots.test(h2Box.innerText)) {
     e.preventDefault();
     alert("Invalid entry");
   }
-    if (h2ChildNodes.length > 0) { 
-        let h2ChildNodeText = h2ChildNodes[0].textContent;
-        let lastChar = h2ChildNodeText.charAt(h2ChildNodeText.length - 1);
-        if (lastChar === ".") {
-            alert("Invalid entry");
-            let h2TextUpdated = h2ChildNodeText.replace(lastChar, "");
-            h2ChildNodes[0].textContent = h2TextUpdated;
-        }
-    }
+    
   return;
 });
 
