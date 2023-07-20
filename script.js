@@ -8,7 +8,7 @@ h2Box.addEventListener("click", () => {
     let h2ChildNodes = h2Box.childNodes;
     if (h2ChildNodes.length > 0) {
         let selection = window.getSelection();
-        selection.setPosition(h2ChildNodes[0], h2ChildNodes[0].length + 1);
+        selection.setPosition(h2ChildNodes[0], h2ChildNodes[0].length);
     }
   console.log(h2Box);
   return;
