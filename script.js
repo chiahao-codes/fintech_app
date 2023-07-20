@@ -5,13 +5,14 @@ h2Box.addEventListener("click", () => {
   if (h2Box.innerText === "Enter ticker...") {
     h2Box.innerText = "";
   }
+    let h2ChildNodes = h2Box.childNodes;
+    if (h2ChildNodes.length > 0) {
+        let range = document.createRange();
+        let textNode = h2ChildNodes[0];
+        range.setStartAfter(textNode);
+        range.setEndAfter(textNode);
+    }
   console.log(h2Box);
-  //place cursor at the end of text nodes;
-  /**
-     * let range = new Range();
-    range.setSt
-     */
-
   return;
 });
 
