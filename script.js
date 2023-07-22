@@ -41,7 +41,9 @@ h2Box.addEventListener("keyup", (e) => {
     if (divBr) {
         divBr.remove()
     }
-    console.log(h2Box.innerText);
+  console.log(h2Box.innerText);
+  
+  //prevent consecutive dots to be entered.
     if (regExpDots.test(h2Box.innerText) === true) {
         e.preventDefault();
         alert("invalid entry:'.'")
