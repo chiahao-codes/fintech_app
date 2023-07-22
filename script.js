@@ -13,7 +13,7 @@ h2Box.addEventListener("click", () => {
         let selection = window.getSelection();
         selection.setPosition(h2ChildNodes[0], h2ChildNodes[0].length);
     }
-  console.log(h2Box);
+  
   return;
 });
 
@@ -23,8 +23,11 @@ h2Box.addEventListener("keydown", (e) => {
     e.preventDefault();
     alert("Invalid entry");
   }
-  if (e.key === "Enter" && h2Box.children.length > 0) {
-    console.log(h2Box.children);
+  
+  if (e.key === "Enter") {
+    if (h2Box.children.length > 0) {
+      console.log(h2Box.children);
+    }
   }
   return;
 });
