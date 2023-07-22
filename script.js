@@ -22,7 +22,7 @@ h2Box.addEventListener("keydown", (e) => {
     e.preventDefault();
     alert("Invalid entry");
   }
-
+  console.log(h2Box.children);
   return;
 });
 
