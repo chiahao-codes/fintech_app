@@ -23,7 +23,7 @@ h2Box.addEventListener("keydown", (e) => {
     e.preventDefault();
     alert("Invalid entry");
   }
-  if (e.key === "Enter") {
+  if (e.key === "Enter" && h2Box.children.length > 0) {
     console.log(h2Box.children);
   }
   return;
@@ -35,7 +35,6 @@ h2Box.addEventListener("keyup", (e) => {
   if (e.key === "Backspace" || e.key === "Enter") {
     if (h2Children.length > 0) {
       for (let i = 0; i < h2Children.length; i++) {
-        console.log(h2Children[i])
         h2Children[i].remove();
       }
     }
