@@ -19,15 +19,11 @@ h2Box.addEventListener("click", () => {
 
 h2Box.addEventListener("keydown", (e) => {
   
-  if (regExp.test(e.key)) {
+  if (regExp.test(e.key) || e.key === "Enter" && h2Box.innerText === "") {
     e.preventDefault();
     alert("Invalid entry");
   }
 
-  if (e.key === "Enter" && h2Box.innerText === "") {
-    console.log(h2Box);
-    
-  }
   return;
 });
 
