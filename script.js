@@ -37,7 +37,8 @@ h2Box.addEventListener("keyup", (e) => {
         console.log(h2Box)
     }
 
-    //Edge Case: chrome browser
+    //Edge Case: chrome browser;
+    //remove auto generated divs;
     if (divBr) {
         divBr.remove()
     }

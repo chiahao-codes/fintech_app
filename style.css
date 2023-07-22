@@ -11,6 +11,9 @@
   --mint-color:#44eabb;
   --cold-white:#f3fdfb;
   --aqua-breeze:#d8e8e4;
+  --dark-green:#084d15;
+  --dark-purp:#6e145e;
+
 }
 
 body {
@@ -25,7 +28,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     position: relative;
-    background-color: var(--nyc-blue);
+    background-color: var(--dark-green);
   }
 }
 
@@ -68,7 +71,7 @@ body {
   }
 
   body header h2:focus {
-    border-color:var(--mint-color);
+    border-color:var(--dark-purp);
   }
 
   @keyframes blink {
@@ -89,7 +92,7 @@ body {
     left:2px;
     width: 7px;
     height: 25px;
-    background-color: rgb(236, 87, 33);
+    background-color: var(--mint-color);
     animation-name: blink;
     animation-duration: 500ms;
     animation-iteration-count: infinite;
