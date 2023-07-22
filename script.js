@@ -2,8 +2,7 @@ const regExp = /[^a-z.A-Z]/;
 const regExpDots = /\.\./;
 const h2Box = document.querySelector("header h2");
 const h2ChildNodes = h2Box.childNodes;
-const divBr = document.querySelector("h2 > div");
-const brNodeList = document.querySelectorAll("h2 > br");
+
 
 h2Box.addEventListener("click", () => {
   if (h2Box.innerText === "Enter ticker...") {
@@ -19,10 +18,15 @@ h2Box.addEventListener("click", () => {
 });
 
 h2Box.addEventListener("keydown", (e) => {
+  let divBr = document.querySelector("h2 > div");
   if (regExp.test(e.key)) {
     e.preventDefault();
     alert("Invalid entry");
   }
+
+   if (divBr) {
+     divBr.remove();
+   }
    
   return;
 });
