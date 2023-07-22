@@ -25,8 +25,7 @@ h2Box.addEventListener("keydown", (e) => {
   }
 
   if (e.key === "Enter" && h2Box.innerText === "") {
-    console.log(h2Box.children);
-    h2Box.children[0].remove();
+    console.log(h2Box.firstElementChild);
     
   }
   return;
