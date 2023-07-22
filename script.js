@@ -23,16 +23,6 @@ h2Box.addEventListener("keydown", (e) => {
     alert("Invalid entry");
   }
 
-   let h2Children = h2Box.children;
-   //remove <br> or div;
-   if (e.key === "Backspace" || e.key === "Enter") {
-     if (h2Children.length > 0) {
-       for (let i = 0; i < h2Children.length; i++) {
-         h2Children[i].remove();
-       }
-     }
-   }
-
   return;
 });
 
