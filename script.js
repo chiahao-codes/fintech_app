@@ -25,7 +25,7 @@ h2Box.addEventListener("keydown", (e) => {
   }
 
   if (e.key === "Enter" && h2Box.innerText === "") {
-    console.log(h2Box.innerHTML);
+    console.log(h2Box);
     
   }
   return;
