@@ -7,12 +7,11 @@
 }
 
 :root {
-  --nyc-blue:#213b97;
   --mint-color:#44eabb;
   --cold-white:#f3fdfb;
-  --aqua-breeze:#d8e8e4;
-  --dark-green:#06300e;
+  --greenish:#34B17E;
   --dark-purp:#6e145e;
+  --orangish: #DA9431;
 
 }
 
@@ -28,7 +27,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     position: relative;
-    background-color: var(--dark-green);
+    background-color: var(--greenish);
   }
 }
 
@@ -92,7 +91,7 @@ body {
     left:2px;
     width: 7px;
     height: 25px;
-    background-color: var(--mint-color);
+    background-color: var(--orangish);
     animation-name: blink;
     animation-duration: 500ms;
     animation-iteration-count: infinite;
