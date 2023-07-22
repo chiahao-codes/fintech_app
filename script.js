@@ -23,27 +23,26 @@ h2Box.addEventListener("keydown", (e) => {
     e.preventDefault();
     alert("Invalid entry");
   }
-    if (divBr) {
-      divBr.remove();
-    }
+   
   return;
 });
 
 h2Box.addEventListener("keyup", (e) => {
+  let divBr = document.querySelector("h2 > div");
+  let brNodeList = document.querySelectorAll("h2 > br");
   //remove <br>
-    if ((e.key == "Backspace" && brNodeList.length > 0 || e.key == "Enter" && brNodeList.length>0)) {
+  if ((e.key === "Backspace" || e.key === "Enter")) {
+    if (brNodeList.length > 0) {
       for (let i = 0; i < brNodeList.length; i++) {
         brNodeList[i].remove();
-        }
-        console.log(h2Box)
+      }
     }
-
     //Edge Case: chrome browser;
     //remove auto generated divs;
     if (divBr) {
-        divBr.remove()
+      divBr.remove();
     }
-  console.log(h2Box.innerText);
+  }
   
   //prevent consecutive dots to be entered.
     if (regExpDots.test(h2Box.innerText) === true) {
