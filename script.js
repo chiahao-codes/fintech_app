@@ -18,10 +18,13 @@ h2Box.addEventListener("click", () => {
 });
 
 h2Box.addEventListener("keydown", (e) => {
-  console.log(h2Box.children)
+  
   if (regExp.test(e.key)) {
     e.preventDefault();
     alert("Invalid entry");
+  }
+  if (e.key === "Enter") {
+    console.log(h2Box.children);
   }
   return;
 });
