@@ -18,41 +18,29 @@ h2Box.addEventListener("click", () => {
 });
 
 h2Box.addEventListener("keydown", (e) => {
-  let divBr = document.querySelector("h2 > div");
   if (regExp.test(e.key)) {
     e.preventDefault();
     alert("Invalid entry");
   }
-
-   if (divBr) {
-     divBr.remove();
-   }
-   
+  //prevent consecutive dots to be entered.
+  if (regExpDots.test(h2Box.innerText) === true) {
+    e.preventDefault();
+    alert("invalid entry:'.'");
+  }
+  
   return;
 });
 
 h2Box.addEventListener("keyup", (e) => {
-  let divBr = document.querySelector("h2 > div");
-  let brNodeList = document.querySelectorAll("h2 > br");
-  //remove <br>
+  let h2Children = h2Box.children;
+  //remove <br> or div;
   if ((e.key === "Backspace" || e.key === "Enter")) {
-    if (brNodeList.length > 0) {
-      for (let i = 0; i < brNodeList.length; i++) {
-        brNodeList[i].remove();
+    if (h2Children.length > 0) {
+      for (let i = 0; i < h2Children.length; i++) {
+        h2Children[i].remove();
       }
     }
-    //Edge Case: chrome browser;
-    //remove auto generated divs;
-    if (divBr) {
-      divBr.remove();
-    }
   }
-  
-  //prevent consecutive dots to be entered.
-    if (regExpDots.test(h2Box.innerText) === true) {
-        e.preventDefault();
-        alert("invalid entry:'.'")
-    }
 
   return;
 });
