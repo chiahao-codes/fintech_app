@@ -43,7 +43,7 @@ body {
   }
 
   body header h2 {
-    display: block;
+    display: inline-block;
     position:relative;
     font-family:inherit;
     padding: 3px 1px 1px 1px;
@@ -58,7 +58,7 @@ body {
     box-shadow: 0 .5px 5px rgb(23, 23, 23);
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: "";
+  
   }
 
 
@@ -84,7 +84,7 @@ body {
 
   body header h2::after{
     content: "";
-    display: block;
+    display: inline-block;
     position: relative;
     bottom:-2px;
     left:2px;
@@ -95,5 +95,6 @@ body {
     animation-duration: 500ms;
     animation-iteration-count: infinite;
     opacity: 1;
+    white-space: nowrap;
   }
 }
