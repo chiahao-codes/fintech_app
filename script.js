@@ -23,11 +23,10 @@ h2Box.addEventListener("keydown", (e) => {
     e.preventDefault();
     alert("Invalid entry");
   }
-  
-  if (e.key === "Enter") {
-    if (h2Box.children.length > 0) {
-      console.log(h2Box.children);
-    }
+
+  if (e.key === "Enter" && h2Box.innerText === "") {
+    console.log(h2Box.children);
+    
   }
   return;
 });
