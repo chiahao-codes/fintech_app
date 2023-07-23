@@ -30,14 +30,19 @@ h2Box.addEventListener("keydown", (e) => {
 
 h2Box.addEventListener("keyup", (e) => {
   const h2Children = h2Box.children;
-  let br = document.querySelector("br");
+  let brList = document.querySelectorAll("br");
   //remove <br> or div;
   if (e.key === "Backspace" || e.key === "Enter") {
     if (h2Children.length > 0) {
       for (let i = 0; i < h2Children.length; i++) {
         let childEle = h2Children[i];
         childEle.parentNode.removeChild(childEle);
-        console.log(childEle.parentNode);
+      }
+    }
+    if (brList.length > 0) {
+      for (let j = 0; j < brList.length; j++){
+        console.log(brList[j])
+        brList[j].remove;
       }
     }
   }
