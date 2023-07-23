@@ -36,7 +36,7 @@ h2Box.addEventListener("keyup", (e) => {
     if (h2Children.length > 0) {
       for (let i = 0; i < h2Children.length; i++) {
         h2Children[i].remove();
-        if (br) {
+        if (br !== null) {
           br.remove();
         }
       }
