@@ -34,9 +34,8 @@ h2Box.addEventListener("keyup", (e) => {
   //remove <br> or div;
   if (e.key === "Backspace" || e.key === "Enter") {
     if (h2Children.length > 0) {
-      console.log(h2Children);
-      console.log(br)
       for (let i = 0; i < h2Children.length; i++) {
+        console.log(h2Children[i]);
         h2Children[i].remove();
       }
     }
