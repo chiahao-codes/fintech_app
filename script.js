@@ -17,7 +17,20 @@ h2Box.addEventListener("click", () => {
 
 h2Box.addEventListener("keydown", (e) => {
   let textString = h2Box.innerText;
-  if (textString.length >= 5 && e.key !== "Backspace" && e.key !== "Enter") {
+
+  if ((e.key !== "Backspace" && e.key !== "Enter") || (textString === "" && e.key === "Enter")) {
+    if (regExp.test(e.key) === false) {
+      alert("Invalid entry");
+    }
+    if (textString.length >= 5) {
+      alert("Character max reached")
+    }
+    e.preventDefault();
+  }
+  
+
+  /**
+   * if (textString.length >= 5 && e.key !== "Backspace" && e.key !== "Enter") {
      e.preventDefault();
     alert("Character amount exceeded");
   }
@@ -26,12 +39,14 @@ h2Box.addEventListener("keydown", (e) => {
     e.preventDefault()
   }
 
-  if (regExp.test(e.key) === false) {
+   if (regExp.test(e.key) === false) {
     if (e.key !== "Backspace" || e.key !== "Enter") {
-       e.preventDefault();
-       alert("Invalid entry");
+      e.preventDefault();
+      alert("Invalid entry");
     }
   }
+   */
+
   return;
 });
 
