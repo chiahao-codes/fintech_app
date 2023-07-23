@@ -34,15 +34,18 @@ h2Box.addEventListener("keyup", (e) => {
   //remove <br> or div;
   if (e.key === "Backspace" || e.key === "Enter") {
     if (h2Children.length > 0) {
+      console.log(h2Children);
       for (let i = 0; i < h2Children.length; i++) {
         h2Children[i].remove();
       }
     }
-    if (brList.length > 0) {
+    /**
+     *   if (brList.length > 0) {
       for (let j = 0; j < brList.length; j++){
         brList[j].remove()
       }
     }
+     */
   }
 
   //prevent consecutive dots to be entered.
