@@ -41,8 +41,7 @@ h2Box.addEventListener("keyup", (e) => {
     }
     if (brList.length > 0) {
       for (let j = 0; j < brList.length; j++){
-        console.log(brList[j])
-        brList[j].remove;
+        brList[j].remove()
       }
     }
   }
