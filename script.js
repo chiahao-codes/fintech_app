@@ -29,22 +29,19 @@ h2Box.addEventListener("keydown", (e) => {
 });
 
 h2Box.addEventListener("keyup", (e) => {
-  const h2Children = h2Box.children;
-  let brList = document.querySelectorAll("h2 br");
+  //const h2Children = h2Box.children;
+  let divBr = document.querySelector("h2 div");
+  let br = document.querySelector("h2 br");
   //remove <br> or div;
   if (e.key === "Backspace" || e.key === "Enter") {
-    if (h2Children.length > 0) {
-      console.log(h2Children);
-      for (let i = 0; i < h2Children.length; i++) {
-        h2Children[i].remove();
-      }
+if (br) {
+  br.remove();
+    }
+    if (divBr) {
+      divBr.remove();
     }
     /**
-     *   if (brList.length > 0) {
-      for (let j = 0; j < brList.length; j++){
-        brList[j].remove()
-      }
-    }
+     *   
      */
   }
 
