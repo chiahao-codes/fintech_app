@@ -29,7 +29,19 @@ h2Box.addEventListener("keydown", (e) => {
 });
 
 h2Box.addEventListener("keyup", (e) => {
-  //const h2Children = h2Box.children;
+
+  //prevent consecutive dots to be entered.
+  if (regExpDots.test(h2Box.innerText) === true) {
+    e.preventDefault();
+    alert("invalid entry:'.'");
+  }
+  return;
+});
+
+
+
+/**
+ * //const h2Children = h2Box.children;
   let divBr = document.querySelector("h2 div");
   let br = document.querySelector("br");
   //remove <br> or div;
@@ -42,12 +54,5 @@ h2Box.addEventListener("keyup", (e) => {
       divBr.remove();
     }
   }
-
-  //prevent consecutive dots to be entered.
-  if (regExpDots.test(h2Box.innerText) === true) {
-    e.preventDefault();
-    alert("invalid entry:'.'");
-  }
-  return;
-});
+ */
 

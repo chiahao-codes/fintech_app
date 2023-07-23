@@ -68,9 +68,10 @@ body {
     min-width: 1px;
   }
 
-  body header h2 br{
+  body header h2 br, body header h2 div {
     display: none;
   }
+
 
   body header h2:focus {
     border-color:var(--dark-purp);
