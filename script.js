@@ -17,9 +17,7 @@ h2Box.addEventListener("click", () => {
 
 h2Box.addEventListener("keydown", (e) => {
   let textString = h2Box.innerText;
-  //let endChar = textString[textString.length - 1];
-
-  if (textString.length > 5) {
+  if (textString.length >= 5) {
     if (e.key !== "Backspace") {
          e.preventDefault();
          alert("Character amount exceeded");
