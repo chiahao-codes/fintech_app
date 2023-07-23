@@ -34,7 +34,8 @@ h2Box.addEventListener("keyup", (e) => {
   let br = document.querySelector("h2 br");
   //remove <br> or div;
   if (e.key === "Backspace" || e.key === "Enter") {
-if (br) {
+    if (br) {
+  console.log(br)
   br.remove();
     }
     if (divBr) {
