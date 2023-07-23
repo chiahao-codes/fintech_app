@@ -17,7 +17,7 @@ h2Box.addEventListener("click", () => {
 
 h2Box.addEventListener("keydown", (e) => {
   let textString = h2Box.innerText;
-  if (textString.length >= 5 && regExp.test(e.key) === true ) {
+  if (textString.length >= 5 && e.key !== "Enter" ) {
          e.preventDefault();
          alert("Character amount exceeded");
   }
