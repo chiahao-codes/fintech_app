@@ -1,5 +1,5 @@
 const regExp = /[^a-z.A-Z]/;
-const regExpDots = /\.\./;
+//const regExpDots = /\.\./;
 const h2Box = document.querySelector("header>h2");
 
 
@@ -20,11 +20,14 @@ h2Box.addEventListener("click", () => {
 
 h2Box.addEventListener("keydown", (e) => {
   let textString = h2Box.innerText;
+  let endChar = textString[textString.length - 1];
+  
   if (textString.length > 12 && e.key !== "Backspace") {
     e.preventDefault();
     alert("Character amount exceeded")
   }
-  if (regExp.test(e.key) || e.key === "Enter" && h2Box.innerText === "") {
+
+  if (endChar === "." && e.key === "."|| e.key === "Enter" && h2Box.innerText === "") {
     e.preventDefault();
     alert("Invalid entry");
   }
@@ -56,19 +59,5 @@ let divBr = document.querySelector("h2 div");
 
 
 
-/**
- * //const h2Children = h2Box.children;
-  let divBr = document.querySelector("h2 div");
-  let br = document.querySelector("br");
-  //remove <br> or div;
-  if (e.key === "Backspace" || e.key === "Enter") {
-    if (br) {
-  console.log(br)
-  br.remove();
-    }
-    if (divBr) {
-      divBr.remove();
-    }
-  }
- */
+/**/
 
