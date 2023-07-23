@@ -1,4 +1,4 @@
-const regExp = /[^a-z.A-Z]/;
+const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
 h2Box.addEventListener("click", () => {
@@ -17,19 +17,20 @@ h2Box.addEventListener("click", () => {
 
 h2Box.addEventListener("keydown", (e) => {
   let textString = h2Box.innerText;
-  let endChar = textString[textString.length - 1];
+  //let endChar = textString[textString.length - 1];
 
   if (textString.length > 5) {
     if (e.key !== "Backspace") {
          e.preventDefault();
          alert("Character amount exceeded");
     }
-
   }
 
-  if (endChar === "." && e.key === "."|| e.key === "Enter" && h2Box.innerText === "") {
-    e.preventDefault();
-    alert("Invalid entry");
+  if (regExp.test(e.key) === false) {
+    if (e.key !== "Backspace" || e.key !== "Enter") {
+       e.preventDefault();
+       alert("Invalid entry");
+    }
   }
   return;
 });
