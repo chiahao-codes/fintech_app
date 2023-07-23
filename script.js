@@ -1,6 +1,6 @@
 const regExp = /[^a-z.A-Z]/;
 const regExpDots = /\.\./;
-const h2Box = document.querySelector("header h2");
+const h2Box = document.querySelector("header>h2");
 
 
 
@@ -29,17 +29,12 @@ h2Box.addEventListener("keydown", (e) => {
 });
 
 h2Box.addEventListener("keyup", (e) => {
-  let br = document.querySelector("h2 > br");
   const h2Children = h2Box.children;
   //remove <br> or div;
   if (e.key === "Backspace" || e.key === "Enter") {
     if (h2Children.length > 0) {
       for (let i = 0; i < h2Children.length; i++) {
-        console.log(h2Children[i]);
-        h2Children[i].remove();
-        if (br) {
-          br.remove();
-        }
+        h2Box.removeChild(h2Children[i]);
       }
     }
   }
