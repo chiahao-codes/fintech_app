@@ -29,7 +29,19 @@ h2Box.addEventListener("keydown", (e) => {
 });
 
 h2Box.addEventListener("keyup", (e) => {
-
+  //hack needed for removing auto-generated divs in mozilla vs. chrome;
+let divBr = document.querySelector("h2 div");
+  let brList = document.querySelectorAll("h2 br");
+  if (e.key === "Backspace" || e.key === "Enter") {
+    if (brList.length > 0) {
+      for (br of brList) {
+        br.remove();
+      }
+    }
+    if (divBr) {
+      divBr.remove();
+    }
+  }
   //prevent consecutive dots to be entered.
   if (regExpDots.test(h2Box.innerText) === true) {
     e.preventDefault();
