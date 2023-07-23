@@ -37,10 +37,11 @@ h2Box.addEventListener("keyup", (e) => {
       for (let i = 0; i < h2Children.length; i++) {
         let childEle = h2Children[i];
         childEle.remove();
-        if (br) br.remove();
       }
     }
   }
+
+  if (br) br.remove();
 
   //prevent consecutive dots to be entered.
   if (regExpDots.test(h2Box.innerText) === true) {
