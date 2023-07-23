@@ -40,9 +40,6 @@ if (br) {
     if (divBr) {
       divBr.remove();
     }
-    /**
-     *   
-     */
   }
 
   //prevent consecutive dots to be entered.
