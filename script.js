@@ -19,7 +19,11 @@ h2Box.addEventListener("click", () => {
 });
 
 h2Box.addEventListener("keydown", (e) => {
-  
+  let textString = h2Box.innerText;
+  if (textString.length > 12) {
+    e.preventDefault();
+    alert("Characters exceeded")
+  }
   if (regExp.test(e.key) || e.key === "Enter" && h2Box.innerText === "") {
     e.preventDefault();
     alert("Invalid entry");
