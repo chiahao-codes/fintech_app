@@ -30,13 +30,12 @@ h2Box.addEventListener("keydown", (e) => {
 
 h2Box.addEventListener("keyup", (e) => {
   const h2Children = h2Box.children;
-  let brList = document.querySelectorAll("br");
+  let brList = document.querySelectorAll("h2 br");
   //remove <br> or div;
   if (e.key === "Backspace" || e.key === "Enter") {
     if (h2Children.length > 0) {
       for (let i = 0; i < h2Children.length; i++) {
-        let childEle = h2Children[i];
-        childEle.parentNode.removeChild(childEle);
+        h2Children[i].remove();
       }
     }
     if (brList.length > 0) {
