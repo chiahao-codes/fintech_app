@@ -18,7 +18,7 @@ h2Box.addEventListener("click", () => {
 h2Box.addEventListener("keydown", (e) => {
   let textString = h2Box.innerText;
 
-  if ((e.key !== "Backspace" && e.key !== "Enter") || (textString === "" && e.key === "Enter")) {
+  if (e.key !== "Backspace" && e.key !== "Enter" || textString === "" && e.key === "Enter") {
     if (regExp.test(e.key) === false) {
       alert("Invalid entry");
     }
