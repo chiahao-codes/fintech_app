@@ -1,8 +1,5 @@
 const regExp = /[^a-z.A-Z]/;
-//const regExpDots = /\.\./;
 const h2Box = document.querySelector("header>h2");
-
-
 
 h2Box.addEventListener("click", () => {
   const h2ChildNodes = h2Box.childNodes;
@@ -21,8 +18,8 @@ h2Box.addEventListener("click", () => {
 h2Box.addEventListener("keydown", (e) => {
   let textString = h2Box.innerText;
   let endChar = textString[textString.length - 1];
-  
-  if (textString.length > 12 && e.key !== "Backspace") {
+
+  if (textString.length > 12 && e.key !== "Backspace" || textString.length > 12 && e.key !== "Enter" ) {
     e.preventDefault();
     alert("Character amount exceeded")
   }
@@ -31,7 +28,6 @@ h2Box.addEventListener("keydown", (e) => {
     e.preventDefault();
     alert("Invalid entry");
   }
-
   return;
 });
 
@@ -49,11 +45,7 @@ let divBr = document.querySelector("h2 div");
       divBr.remove();
     }
   }
-  //prevent consecutive dots to be entered.
-  if (regExpDots.test(h2Box.innerText) === true) {
-    e.preventDefault();
-    alert("invalid entry:'.'");
-  }
+
   return;
 });
 
