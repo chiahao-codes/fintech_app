@@ -22,6 +22,10 @@ h2Box.addEventListener("keydown", (e) => {
     alert("Character amount exceeded");
   }
 
+  if (textString === "" && e.key === "Enter") {
+    e.preventDefault()
+  }
+
   if (regExp.test(e.key) === false) {
     if (e.key !== "Backspace" || e.key !== "Enter") {
        e.preventDefault();
