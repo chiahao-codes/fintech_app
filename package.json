@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/chiahao-codes/fintech_app/issues"
   },
-  "homepage": "https://github.com/chiahao-codes/fintech_app#readme"
+  "homepage": "https://github.com/chiahao-codes/fintech_app#readme",
+  "devDependencies": {
+    "jest": "^29.6.1"
+  }
 }
