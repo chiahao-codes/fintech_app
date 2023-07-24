@@ -8,8 +8,9 @@
 
 :root {
   --cold-white:#f3fdfb;
-  --blueish:#020f51;
-  --yellowish: #cf5408;
+  --greenish:#12542C;
+  --purp:#54123B;
+  --lightgreen:#1ca351;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     position: relative;
-    background-color: var(--blueish);
+    background-color: var(--greenish);
   }
 }
 
@@ -72,7 +73,9 @@ body {
 
 
   body header h2:focus {
-    border-color:var(--yellowish);
+    border-color:var(--lightgreen);
+    background-color: var(--lightgreen);
+    
   }
 
   @keyframes blink {
@@ -90,14 +93,13 @@ body {
     display: inline-block;
     position: relative;
     bottom:-2px;
-    left:2px;
+    left:2.5px;
     width: 7px;
     height: 25px;
-    background-color: var(--yellowish);
+    background-color: var(--purp);
     animation-name: blink;
     animation-duration: 500ms;
     animation-iteration-count: infinite;
     opacity: 1;
-    white-space: nowrap;
   }
 }
