@@ -45,6 +45,7 @@ body {
     display: inline-block;
     position:relative;
     font-family:inherit;
+    font-weight: 600;
     padding: 3px 1px 1px 1px;
     height: 35px;
     width: 250px;
