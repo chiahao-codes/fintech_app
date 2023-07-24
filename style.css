@@ -75,7 +75,6 @@ body {
   body header h2:focus {
     border-color:var(--lightgreen);
     background-color: var(--lightgreen);
-    
   }
 
   @keyframes blink {
@@ -93,7 +92,7 @@ body {
     display: inline-block;
     position: relative;
     bottom:-2px;
-    left:2.5px;
+    left:2.2px;
     width: 7px;
     height: 25px;
     background-color: var(--purp);
