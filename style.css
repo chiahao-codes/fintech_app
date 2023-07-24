@@ -49,8 +49,8 @@ body {
     height: 35px;
     width: 250px;
     outline: none;
-    color:var(--cold-white);
-    border:1px solid var(--cold-white);
+    color:white;
+    border:1px solid white;
     border-radius: 5px;
     cursor: pointer;
     caret-color: transparent;
