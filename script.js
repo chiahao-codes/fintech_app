@@ -53,7 +53,7 @@ h2Box.addEventListener("keyup", (e) => {
   return;
 });
 
-h2Box.addEventListener("unfocus", (e) => {
+h2Box.addEventListener("focusout", (e) => {
   if (h2Box.innerText === "") {
     setTimeout(() => {
       if (h2Box.innerText === "") {
