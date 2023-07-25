@@ -27,9 +27,8 @@ body {
     position: relative;
     background-color: var(--greenish);
   }
-}
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+
   body header {
     width: 100%;
     height: 75px;
@@ -102,4 +101,8 @@ body {
     animation-iteration-count: infinite;
     opacity: 1;
   }
+  }
+
+@media screen and (max-width: 480px) { 
+
 }
