@@ -54,11 +54,13 @@ h2Box.addEventListener("keyup", (e) => {
 });
 
 h2Box.addEventListener("focus", (e) => {
-  setTimeout(() => {
-    if (h2Box.innerText === "") {
-      h2Box.innerText = "Enter ticker...";
-    }
-  }, 10000);
+  if (h2Box.innerText === "") {
+    setTimeout(() => {
+      if (h2Box.innerText === "") {
+        h2Box.innerText = "Enter ticker...";
+      }
+    }, 10000);
+  }
 })
 
 /**/
