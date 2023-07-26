@@ -116,7 +116,7 @@ body {
     overflow: hidden;
     border-top-style:solid;
     border-top-color: rgb(122, 122, 122);
-    border-top-width: 1px;
+    border-top-width: .5px;
     padding:7px;
     font-size:15px;
     line-height:24px;
@@ -127,12 +127,6 @@ body footer .container {
   display: flex;
   justify-content: space-around;
   width:100%;
-}
-
-body footer hr{
-size:.2px;
-width:100%;
-color:var(--greenish);
 }
 
 body footer .container .first-child {
