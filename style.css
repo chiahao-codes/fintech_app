@@ -131,7 +131,7 @@ body footer .container {
   width:100%;
 }
 
-body footer .container #footer-top-row{
+body footer #footer-top-row{
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--cold-white);
