@@ -158,7 +158,8 @@ body footer .container .second-child{
     color:inherit;
   }
 
-  footer .container .first-child a:link, footer .container .second-child a:link{
+  footer .container .first-child h6 .link, footer .container .second-child ul li .link,
+   footer .container .second-child h6 .link{
     color: var(--cold-white);
     text-decoration: none;
   }
