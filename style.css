@@ -130,7 +130,7 @@ body footer .container {
 }
 
 body footer hr{
-size:.5px;
+size:.2px;
 width:100%;
 color:var(--greenish);
 }
