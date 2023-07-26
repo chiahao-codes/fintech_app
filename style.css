@@ -117,7 +117,7 @@ body {
     border-top-style:solid;
     border-top-color: rgb(122, 122, 122);
     border-top-width: .5px;
-    padding:7px;
+    padding:7px 2px;
     font-size:15px;
     line-height:24px;
     color:rgb(222, 218, 218);
