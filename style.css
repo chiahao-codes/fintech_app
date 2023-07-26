@@ -24,6 +24,7 @@ body {
     font-family: "Noto Sans", sans-serif;
     width: 100%;
     overflow-x: hidden;
+    overflow-y: scroll;
     position: relative;
     background-color: var(--greenish);
   }
