@@ -158,7 +158,7 @@ body footer .container .second-child{
     color:inherit;
   }
 
-  footer div a:link{
+  footer .container .first-child a:link, footer .container .second-child a:link{
     color: var(--cold-white);
     text-decoration: none;
   }
