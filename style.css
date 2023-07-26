@@ -123,7 +123,7 @@ body {
     font-size:15px;
     line-height:24px;
     color:rgb(222, 218, 218);
-    opacity: .5;
+    background-color: #113921;
   }
 
 body footer .container {
