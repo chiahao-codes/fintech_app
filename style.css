@@ -132,6 +132,7 @@ body footer .container {
 body footer hr{
 size:.5px;
 width:100%;
+color:var(--greenish);
 }
 
 body footer .container .first-child {
