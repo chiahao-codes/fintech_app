@@ -111,7 +111,7 @@ body {
     left:0;
     right:0;
     width:100%;
-    height: 80px;
+    height: 90px;
     border-top-style:solid;
     border-top-color: rgb(122, 122, 122);
     border-top-width: 1px;
@@ -119,7 +119,6 @@ body {
     font-size:15px;
     line-height:24px;
     color:rgb(222, 218, 218);
-    overflow: hidden;
   }
 
 body footer .container {
