@@ -128,17 +128,17 @@ body footer .container {
   width:100%;
 }
 
-body footer .container>div{
+body footer .container .first-child {
 width: 200px;
+}
+
+body footer .container .second-child{
+  width: 55px;
 }
 
   body footer .container #about p{
     font-size: 9px;
     color:inherit;
-  }
-
-  body footer .container #links{
-    width:50px;
   }
 
   body footer .container #links ul{
