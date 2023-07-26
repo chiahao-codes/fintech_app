@@ -124,8 +124,7 @@ body {
 
 body footer .container {
   display: flex;
-  justify-content: center;
-  gap:20px;
+  justify-content: space-evenly;
 }
 
 body footer .container #about{
@@ -138,7 +137,7 @@ width: 200px;
   }
 
   body footer .container #links{
-    width:80px;
+    width:50px;
   }
 
   body footer .container #links ul{
