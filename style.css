@@ -128,7 +128,7 @@ body footer .container {
   width:100%;
 }
 
-body footer .container #about{
+body footer .container>div{
 width: 200px;
 }
 
