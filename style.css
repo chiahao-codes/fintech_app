@@ -125,6 +125,7 @@ body {
 body footer .container {
   display: flex;
   justify-content: flex-start;
+  width:100%;
 }
 
 body footer .container #about{
