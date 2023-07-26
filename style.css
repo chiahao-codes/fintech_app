@@ -125,7 +125,7 @@ body {
 
 body footer .container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   width:100%;
   gap:25px;
 }
