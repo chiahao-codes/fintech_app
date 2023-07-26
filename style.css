@@ -127,7 +127,7 @@ body footer .container {
   display: flex;
   justify-content: flex-start;
   width:100%;
-  gap:5px;
+  gap:10px;
 }
 
 body footer .container .first-child {
