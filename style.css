@@ -132,6 +132,7 @@ body footer .container {
 
 body footer hr{
 width:60%;
+text-align:center;
 size:1px;
 color: var(--cold-white)
 }
