@@ -158,6 +158,11 @@ body footer .container .second-child{
     color:inherit;
   }
 
+  footer a:link{
+    color: var(--cold-white);
+    text-decoration: none;
+  }
+
   }
 
 @media screen and (max-width: 480px) { 
