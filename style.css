@@ -129,7 +129,7 @@ body footer .container {
 }
 
 body footer .container #about{
-width: 150px;
+width: 200px;
 }
 
   body footer .container #about p{
@@ -138,7 +138,7 @@ width: 150px;
   }
 
   body footer .container #links{
-    width:100px;
+    width:80px;
   }
 
   body footer .container #links ul{
