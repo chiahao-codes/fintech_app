@@ -106,7 +106,7 @@ body {
     display: flex;  
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    gap: 6px;
     position: fixed;
     bottom:0;
     left:0;
