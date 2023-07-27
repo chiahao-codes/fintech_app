@@ -53,7 +53,7 @@ body {
     border:1px solid var(--cold-white);
     border-radius: 5px;
     cursor: pointer;
-    caret-color: red;
+    caret-color: transparent;
     box-shadow: 0 .5px 5px rgb(23, 23, 23);
     overflow: hidden;
     white-space: nowrap;
