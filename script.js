@@ -1,4 +1,5 @@
-
+const f = require('fs');
+console.log(f);
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
@@ -54,7 +55,6 @@ h2Box.addEventListener("keydown", (e) => {
     }
   }
 
-  
   if (textString === "" && e.key === "Enter") {
     e.preventDefault();
     alert("enter a valid ticker");
