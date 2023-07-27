@@ -31,10 +31,14 @@ h2Box.addEventListener("keydown", (e) => {
     e.preventDefault();
   }
 
+  if (textString.length > 0) {
+    
+  }
 
-  if (regExp.test(e.key) === false || textString.length > 0) {
+  if (regExp.test(e.key) === false || textString.length>0) {
     console.log(regExp.test(e.key));
-      if (e.key !== "Backspace" && e.key !== "Enter" && regExp.test(e.key) === false) {
+    console.log(e.key);
+      if (e.key !== "Backspace" && e.key !== "Enter") {
         e.preventDefault();
         alert("Invalid entry");
       }
