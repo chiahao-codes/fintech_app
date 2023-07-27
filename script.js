@@ -1,4 +1,4 @@
-import yahooFinance from "yahoo-finance2";
+let yahooFinance = require('yahoo-finance2').default;
 let results = yahooFinance.search('tsm');
 console.log(results);
 
