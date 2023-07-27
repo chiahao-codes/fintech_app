@@ -29,6 +29,7 @@ h2Box.addEventListener("keydown", (e) => {
 
   if (textString === "" && e.key === "Enter") {
     e.preventDefault();
+    alert("enter a valid ticker")
   }
 
   //prevent non-letters && non-Backspace, non-Enter keys;
@@ -43,7 +44,7 @@ h2Box.addEventListener("keydown", (e) => {
 
   //prevent navigation keys;
   if (textString.length > 0) {
-    let navKeys = ["ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp", "Left", "Right", "Up", "Down", "Home", "End", "Del", "Delete"];
+    let navKeys = ["ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp", "Left", "Right", "Up", "Down", "Home", "End", "Del", "Delete", "PageUp", "PageDown", "Insert"];
     for (const ele of navKeys) {
        if (e.key === ele) {
          e.preventDefault();
