@@ -4,15 +4,18 @@ const h2Box = document.querySelector("header>h2");
 
 h2Box.addEventListener("focusin", () => {
   const h2ChildNodes = h2Box.childNodes;
+  const selection = window.getSelection();
   if (h2Box.innerText === "Enter ticker...") {
     h2Box.innerText = "";
   }
   //set caret position after text node
-
-    console.log(h2ChildNodes);
-    let selection = window.getSelection();
-    selection.setPosition(h2ChildNodes[0], h2ChildNodes[0].length);
   
+  if (h2ChildNodes.length > 0) {
+      console.log(h2ChildNodes)
+    selection.setPosition(h2ChildNodes[0], h2ChildNodes[0].length);
+  } else {
+    selection.setPosition(h2Box, 0);
+  }
 
   return;
 });
