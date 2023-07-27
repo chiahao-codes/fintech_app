@@ -1,7 +1,7 @@
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
-h2Box.addEventListener("click", () => {
+h2Box.addEventListener("focus", () => {
   const h2ChildNodes = h2Box.childNodes;
   if (h2Box.innerText === "Enter ticker...") {
     h2Box.innerText = "";
