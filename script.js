@@ -1,5 +1,5 @@
-let yf = require('./node_modules/yf-web-scraper/index');
-
+let yf = require('yf-web-scraper');
+console.log(yf);
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
