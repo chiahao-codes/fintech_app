@@ -53,7 +53,7 @@ body {
     border:1px solid var(--cold-white);
     border-radius: 5px;
     cursor: pointer;
-    caret-color: transparent;
+    caret-color: red;
     box-shadow: 0 .5px 5px rgb(23, 23, 23);
     overflow: hidden;
     white-space: nowrap;
@@ -114,11 +114,6 @@ body {
     width:100%;
     height: max-content;
     overflow: hidden;
-    /*
-     border-top-style:solid;
-    border-top-color: rgb(122, 122, 122);
-    border-top-width: .5px;
-    */
     padding:10px 20px 8px;
     font-size:15px;
     line-height:24px;
