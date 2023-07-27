@@ -8,12 +8,11 @@ h2Box.addEventListener("focusin", () => {
     h2Box.innerText = "";
   }
   //set caret position after text node
-  console.log(h2ChildNodes)
-  if (h2ChildNodes.length > 0) {
-      console.log(h2ChildNodes);
+
+    console.log(h2ChildNodes);
     let selection = window.getSelection();
     selection.setPosition(h2ChildNodes[0], h2ChildNodes[0].length);
-  }
+  
 
   return;
 });
