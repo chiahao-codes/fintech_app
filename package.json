@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
+  
   "scripts": {
     "test": "",
     "start": "script.js"
@@ -19,5 +20,6 @@
   "homepage": "https://github.com/chiahao-codes/fintech_app#readme",
   "devDependencies": {
     "jest": "^29.6.1"
-  }
+  },
+  "type":"commonjs"
 }
