@@ -1,6 +1,4 @@
-let yahooFinance = require('yahoo-finance2').default;
-let results = yahooFinance.search('tsm');
-console.log(results);
+let yf = require('./node_modules/yf-web-scraper/index');
 
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");

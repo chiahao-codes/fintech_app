@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
-  
   "scripts": {
     "test": "",
     "start": "script.js"
@@ -21,5 +20,8 @@
   "devDependencies": {
     "jest": "^29.6.1"
   },
-  "type":"commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "yf-web-scraper": "^1.21.1"
+  }
 }
