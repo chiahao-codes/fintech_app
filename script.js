@@ -31,7 +31,7 @@ h2Box.addEventListener("keydown", (e) => {
     e.preventDefault();
   }
 
-  if (regExp.test(e.key) === false) {
+  if (regExp.test(e.key) === false || textString.length>0) {
     if (e.key !== "Backspace" || e.key !== "Enter") {
       e.preventDefault();
       alert("Invalid entry");
