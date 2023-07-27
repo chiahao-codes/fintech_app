@@ -22,6 +22,7 @@
   },
   "type": "commonjs",
   "dependencies": {
+    "require": "^0.4.4",
     "yf-web-scraper": "^1.21.1"
   }
 }
