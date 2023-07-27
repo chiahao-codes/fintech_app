@@ -1,3 +1,7 @@
+const yahooFinance = require("yahoo-finance2").default;
+let results = await yahooFinance.search('tsm');
+console.log(results);
+
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
