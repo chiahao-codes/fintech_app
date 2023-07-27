@@ -1,5 +1,5 @@
 
-const regExp = /[a-zA-Z]/;
+const regExp = /[a-zA-ZArrowLeft]/;
 const h2Box = document.querySelector("header>h2");
 
 h2Box.addEventListener("focusin", () => {
@@ -35,19 +35,19 @@ h2Box.addEventListener("keydown", (e) => {
     
   }
 
-  if (regExp.test(e.key) === false || textString.length>0) {
-    console.log(regExp.test(e.key));
-    console.log(e.key);
+  //prevent non-letters && non-Backspace, non-Enter keys;
+  //Note: navigation keys are failing the regexp test;
+  //Must use separate if statement
+  if (regExp.test(e.key) === false ) {
       if (
-        (e.key !== "Backspace" && e.key !== "Enter") &&
-        regExp.test(e.key) === false
-) {
+        (e.key !== "Backspace" && e.key !== "Enter")) {
         e.preventDefault();
         alert("Invalid entry");
       }
     }
 
-
+  //prevent navigation keys;
+if(e.key)
   return;
 });
 
