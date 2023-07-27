@@ -1,5 +1,5 @@
 const yahooFinance = require("yahoo-finance2").default;
-let results = await yahooFinance.search('tsm');
+let results = yahooFinance.search('tsm');
 console.log(results);
 
 const regExp = /[a-zA-Z]/;
