@@ -27,32 +27,49 @@ h2Box.addEventListener("keydown", (e) => {
     alert("Character amount exceeded");
   }
 
-  if (textString === "" && e.key === "Enter") {
-    e.preventDefault();
-    alert("enter a valid ticker")
-  }
-
-  //prevent non-letters && non-Backspace, non-Enter keys;
-  //Note: navigation keys are failing the regexp test;
-  if (regExp.test(e.key) === false ) {
-      if (
-        (e.key !== "Backspace" && e.key !== "Enter")) {
+  //prevent navigation keys;
+  if (textString.length > 0) {
+    let navKeys = [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowDown",
+      "ArrowUp",
+      "Left",
+      "Right",
+      "Up",
+      "Down",
+      "Home",
+      "End",
+      "Del",
+      "Delete",
+      "PageUp",
+      "PageDown",
+      "Insert",
+    ];
+    for (const ele of navKeys) {
+      if (e.key === ele) {
         e.preventDefault();
         alert("Invalid entry");
       }
     }
-
-  //prevent navigation keys;
-  if (textString.length > 0) {
-    let navKeys = ["ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp", "Left", "Right", "Up", "Down", "Home", "End", "Del", "Delete", "PageUp", "PageDown", "Insert"];
-    for (const ele of navKeys) {
-       if (e.key === ele) {
-         e.preventDefault();
-         alert("Invalid entry");
-       }
-    }
-   
   }
+
+  
+  if (textString === "" && e.key === "Enter") {
+    e.preventDefault();
+    alert("enter a valid ticker");
+  }
+
+  //prevent non-letters
+  //Allow Backspace, Enter keys;
+  //Note: navigation keys are failing the regexp test;
+  if (regExp.test(e.key) === false) {
+    if (e.key !== "Backspace" && e.key !== "Enter") {
+      e.preventDefault();
+      alert("Invalid entry");
+    }
+  }
+
   return;
 });
 
