@@ -1,5 +1,3 @@
-const f = require('fs');
-console.log(f);
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
