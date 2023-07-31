@@ -1,3 +1,9 @@
+const yf = require('yf-web-scraper');
+yf("apple", 'NYSE').then((data) => {
+  console.log(data)
+});
+
+
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
