@@ -1,9 +1,11 @@
-const yf = require('yf-web-scraper');
-
-yf("Apple Inc.", 'NYSE').then((data) => {
+//const yf = require('yf-web-scraper/index');
+/**
+ * yf("Apple Inc.", 'NYSE').then((data) => {
   console.log("running...")
   console.log(data)
 });
+ */
+
 
 
 const regExp = /[a-zA-Z]/;
