@@ -1,5 +1,5 @@
 const yahoo = require('yahoo-finance-scraper');
-console.log(yahoo)
+yahoo.getSingleStockInfo('NFLX').then((data) => { console.log(data) });
 
 
 
