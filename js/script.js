@@ -1,5 +1,5 @@
-const yf = require('yf-web-scraper/index');
-yf("Apple Inc.", "NYSE").then((data) => {
+const yf = require('yf-web-scraper');
+yf("AAPL", "NYSE").then((data) => {
   console.log("running...");
   console.log(data);
 });

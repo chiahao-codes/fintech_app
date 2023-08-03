@@ -1,6 +1,6 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const yf = require('yf-web-scraper/index');
-yf("Apple Inc.", "NYSE").then((data) => {
+const yf = require('yf-web-scraper');
+yf("AAPL", "NYSE").then((data) => {
   console.log("running...");
   console.log(data);
 });
@@ -100,7 +100,7 @@ h2Box.addEventListener("keyup", (e) => {
 
 /**/
 
-},{"yf-web-scraper/index":109}],2:[function(require,module,exports){
+},{"yf-web-scraper":109}],2:[function(require,module,exports){
 module.exports = require('./lib/axios');
 },{"./lib/axios":4}],3:[function(require,module,exports){
 'use strict';
