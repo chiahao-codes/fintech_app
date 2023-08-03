@@ -1,5 +1,5 @@
-const yf = require('yf-web-scraper');
-console.log(yf('AAPL', 'NasdaqGS'));
+const yahoo = require('yahoo-finance-scraper');
+console.log(yahoo)
 
 
 
