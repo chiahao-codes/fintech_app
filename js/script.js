@@ -1,5 +1,6 @@
 const yf = require('yf-web-scraper');
-console.log(yf)
+console.log(yf('aapl', 'NYSE'));
+
 
 
 
