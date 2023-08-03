@@ -5,7 +5,8 @@
   "main": "script.js",
   "scripts": {
     "test": "",
-    "start": "script.js"
+    "start": "script.js",
+    "bro":"browserify script.js > bundle.js"
   },
   "repository": {
     "type": "git",
