@@ -2,11 +2,11 @@
   "name": "fintech_app",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "main.js",
   "scripts": {
     "test": "",
-    "start": "script.js",
-    "bro": "browserify ./js/script.js > bundle.js"
+    "start": "main.js",
+    "bro": "browserify ./js/main.js > bundle.js"
   },
   "repository": {
     "type": "git",
