@@ -1,8 +1,5 @@
-const yahoo = require('yahoo-finance-scraper');
+const yahoo = require('yahoo-finance-webscraper');
 yahoo.getSingleStockInfo('NFLX').then((data) => { console.log(data) });
-
-
-
 
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");

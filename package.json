@@ -24,7 +24,6 @@
   "dependencies": {
     "browserify": "^17.0.0",
     "require": "^0.4.4",
-    "yahoo-finance-scraper": "^0.0.3",
-    "yf-web-scraper": "^1.21.1"
+    "yahoo-finance-webscraper": "^3.0.1"
   }
 }
