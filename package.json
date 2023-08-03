@@ -6,7 +6,7 @@
   "scripts": {
     "test": "",
     "start": "script.js",
-    "bro":"browserify script.js > bundle.js"
+    "bro":"browserify ./js/script.js > bundle.js"
   },
   "repository": {
     "type": "git",
