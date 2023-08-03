@@ -1,5 +1,5 @@
 const yf = require('yf-web-scraper');
-console.log(yf('aapl', 'NYSE'));
+console.log(yf('AAPL', 'NasdaqGS'));
 
 
 
