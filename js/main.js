@@ -1,5 +1,5 @@
 const yahoo = require('yahoo-finance-webscraper');
-//yahoo.getSingleStockInfo('NFLX').then((data) => { console.log(data) });
+yahoo.getSingleStockInfo('NFLX').then((data) => { console.log(data) });
 
 /**
  * Use a server-side proxy: 
