@@ -1,11 +1,14 @@
 const yahoo = require('yahoo-finance-webscraper');
-yahoo.getSingleStockInfo('NFLX').then((data) => { console.log(data) });
+console.log(yahoo);
 
 /**
  * Use a server-side proxy: 
  * Create a server-side script that acts as a proxy 
  * between your web page and the external domain. 
  * The script makes the AJAX request on behalf of your page and returns the response.
+ * yahoo.getSingleStockInfo('NFLX').then((data) => {
+  console.log(data)
+});
  */
 
 const regExp = /[a-zA-Z]/;
