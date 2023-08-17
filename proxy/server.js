@@ -8,7 +8,8 @@ const app = express();
 //app.use(cors());
 app.get("/", (req, res, next) => {
   res.status(200).send("Running...");
-})
+});
+
 app.listen(PORT, () => {
     
     console.log("Proxy listening on port:", PORT);
