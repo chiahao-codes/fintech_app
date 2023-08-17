@@ -4,10 +4,10 @@
   "main": "main.js",
   "scripts": {
     "test": "",
-    "start": "node ./js/main.js",
-    "bro": "browserify ./js/main.js > bundle.js",
-    "dev": "nodemon ./proxy/server.js",
-    "serve": "node ./proxy/server.js"
+    "start": "node ./public/js/main.js",
+    "bro": "browserify ./public/js/main.js > bundle.js",
+    "dev": "nodemon ./public/proxy/server.js",
+    "serve": "node ./public/proxy/server.js"
   },
   "repository": {
     "type": "git",
