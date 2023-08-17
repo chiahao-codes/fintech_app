@@ -7,7 +7,7 @@ const app = express();
 
 //app.use(cors());
 app.get("/", (req, res, next) => {
-  res.send("Running...")
+  res.status();
 })
 app.listen(PORT, () => {
     
