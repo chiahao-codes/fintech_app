@@ -7,7 +7,7 @@ const app = express();
 
 //app.use(cors());
 app.get("/", (req, res, next) => {
-  res.status();
+  res.sendStatus(200);
 })
 app.listen(PORT, () => {
     
