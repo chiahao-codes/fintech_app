@@ -5,9 +5,10 @@ const express = require('express');
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-//app.use(cors());
+app.set("view engine", "ejs");
+
 app.get("/", (req, res, next) => {
-  res.status(200).send("Running...");
+  res.render("index");
 });
 
 app.listen(PORT, () => {
