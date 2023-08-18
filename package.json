@@ -4,8 +4,8 @@
   "main": "main.js",
   "scripts": {
     "test": "",
-    "start": "node ./js/main.js",
-    "bro": "browserify ./js/main.js > bundle.js",
+    "start": "node main.js",
+    "bro": "browserify main.js > bundle.js",
     "dev": "nodemon ./proxy/server.js",
     "serve": "node ./proxy/server.js"
   },
@@ -24,7 +24,6 @@
     "nodemon": "^3.0.1"
   },
   "dependencies": {
-    "browserify": "^17.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
