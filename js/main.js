@@ -13,6 +13,13 @@ console.log(yahoo);
 const express = require("express");
 const path = require("path");
 const app = express();
+const yahoo = require("yahoo-finance-webscraper");
+
+/**
+ *  yahoo.getSingleStockInfo('NFLX').then((data) => {
+    console.log(data)
+});
+ */
 
 //tell express to look in the public folder for static files;
 app.use(express.static(path.join(__dirname, 'public')));
