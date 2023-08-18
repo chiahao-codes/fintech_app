@@ -10,7 +10,12 @@ console.log(yahoo);
   console.log(data)
 });
  */
+const express = require("express");
+const path = require("path");
+const app = express();
 
+//tell express to look in the public folder for static files;
+app.use(express.static(path.join(__dirname, 'public')));
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
