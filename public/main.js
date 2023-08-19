@@ -21,8 +21,7 @@ const yahoo = require("yahoo-finance-webscraper");
 });
  */
 
-//tell express to look in the public folder for static files;
-app.use(express.static(path.join(__dirname, 'public')));
+
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
