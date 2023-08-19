@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use(express.static("public"));
-app.set("view engine", "ejs");
 
 app.listen(PORT, () => {
     console.log("Proxy listening on port:", PORT);
