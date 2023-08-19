@@ -10,10 +10,6 @@ app.set("view engine", "ejs");
 
 app.listen(PORT, () => {
     console.log("Proxy listening on port:", PORT);
-
-  /**
-   
-    */
   
 });
 
