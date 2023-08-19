@@ -4,7 +4,8 @@
   "main": "main.js",
   "scripts": {
     "test": "",
-    "start": "node main.js",
+    "start": "node app.js",
+    "bro": "browserify app.js > bundle.js",
     "dev": "nodemon ./proxy/server.js",
     "serve": "node ./proxy/server.js"
   },
@@ -25,6 +26,7 @@
   "dependencies": {
     "async_hooks": "^1.0.0",
     "async-hooks": "^1.3.1",
+    "browserify": "^17.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",

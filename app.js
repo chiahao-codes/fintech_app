@@ -1,25 +1,4 @@
-/**
- * const yahoo = require('yahoo-finance-webscraper');
-console.log(yahoo);
-
- * Use a server-side proxy: 
- * Create a server-side script that acts as a proxy 
- * between your web page and the external domain. 
- * The script makes the AJAX request on behalf of your page and returns the response.
- * yahoo.getSingleStockInfo('NFLX').then((data) => {
-  console.log(data)
-});
- */
-const express = require("express");
-const path = require("path");
-const app = express();
 const yahoo = require("yahoo-finance-webscraper");
-
-/**
- *  yahoo.getSingleStockInfo('NFLX').then((data) => {
-    console.log(data)
-});
- */
 
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
@@ -31,9 +10,9 @@ h2Box.addEventListener("focusin", () => {
     h2Box.innerText = "";
   }
   //set caret position after text node
-  
+
   if (h2ChildNodes.length > 0) {
-      console.log(h2ChildNodes)
+    console.log(h2ChildNodes);
     selection.setPosition(h2ChildNodes[0], h2ChildNodes[0].length);
   } else {
     selection.setPosition(h2Box, 0);
@@ -111,5 +90,3 @@ h2Box.addEventListener("keyup", (e) => {
 
   return;
 });
-
-/**/
