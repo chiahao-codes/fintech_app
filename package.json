@@ -5,7 +5,7 @@
   "scripts": {
     "test": "",
     "start": "node app.js",
-    "bro": "browserify ./public/app.js > ./public/bundle.js",
+    "bro": "browserify ./public/app.js > ./public/bundle.js && nodemon ./proxy/server.js",
     "dev": "nodemon ./proxy/server.js",
     "serve": "node ./proxy/server.js"
   },

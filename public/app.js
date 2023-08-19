@@ -1,4 +1,5 @@
-//const yahoo = require("yahoo-finance-webscraper");
+const yahoo = require("yahoo-finance-webscraper");
+console.log(yahoo);
 
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
