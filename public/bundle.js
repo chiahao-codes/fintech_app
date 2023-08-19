@@ -1,97 +1,4 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const yahoo = require("yahoo-finance-webscraper");
-
-const regExp = /[a-zA-Z]/;
-const h2Box = document.querySelector("header>h2");
-
-h2Box.addEventListener("focusin", () => {
-  const h2ChildNodes = h2Box.childNodes;
-  const selection = window.getSelection();
-  if (h2Box.innerText === "Enter ticker...") {
-    h2Box.innerText = "";
-  }
-  //set caret position after text node
-
-  if (h2ChildNodes.length > 0) {
-    console.log(h2ChildNodes);
-    selection.setPosition(h2ChildNodes[0], h2ChildNodes[0].length);
-  } else {
-    selection.setPosition(h2Box, 0);
-  }
-
-  return;
-});
-
-h2Box.addEventListener("keydown", (e) => {
-  let textString = h2Box.innerText;
-  if (textString.length >= 5 && e.key !== "Backspace" && e.key !== "Enter") {
-    e.preventDefault();
-    alert("Character amount exceeded");
-  }
-
-  //prevent navigation keys;
-  if (textString.length > 0) {
-    let navKeys = [
-      "ArrowLeft",
-      "ArrowRight",
-      "ArrowDown",
-      "ArrowUp",
-      "Left",
-      "Right",
-      "Up",
-      "Down",
-      "Home",
-      "End",
-      "Del",
-      "Delete",
-      "PageUp",
-      "PageDown",
-      "Insert",
-    ];
-    for (const ele of navKeys) {
-      if (e.key === ele) {
-        e.preventDefault();
-        alert("Invalid entry");
-      }
-    }
-  }
-
-  if (textString === "" && e.key === "Enter") {
-    e.preventDefault();
-    alert("enter a valid ticker");
-  }
-
-  //prevent non-letters
-  //Allow Backspace, Enter keys;
-  //Note: navigation keys are failing the regexp test;
-  if (regExp.test(e.key) === false) {
-    if (e.key !== "Backspace" && e.key !== "Enter") {
-      e.preventDefault();
-      alert("Invalid entry");
-    }
-  }
-
-  return;
-});
-
-h2Box.addEventListener("keyup", (e) => {
-  //needed for removing auto-generated divs in mozilla vs. chrome;
-  let divBr = document.querySelector("h2 div");
-  let brList = document.querySelectorAll("h2 br");
-  if (e.key === "Backspace" || e.key === "Enter") {
-    if (brList.length > 0) {
-      for (br of brList) {
-        br.remove();
-      }
-    }
-    if (divBr) {
-      divBr.remove();
-    }
-  }
-
-  return;
-});
-},{"yahoo-finance-webscraper":3}],2:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -277,7 +184,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 const axios = require('axios');
 
 const getSingleStockInfo = stock => new Promise((resolve, reject) => {
@@ -310,9 +217,9 @@ module.exports = {
     getSingleStockInfo,
     getStocksInfo
 };
-},{"axios":4}],4:[function(require,module,exports){
+},{"axios":3}],3:[function(require,module,exports){
 module.exports = require('./lib/axios');
-},{"./lib/axios":6}],5:[function(require,module,exports){
+},{"./lib/axios":5}],4:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -526,7 +433,7 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
-},{"../cancel/Cancel":7,"../core/buildFullPath":12,"../core/createError":13,"../defaults/transitional":20,"./../core/settle":17,"./../helpers/buildURL":23,"./../helpers/cookies":25,"./../helpers/isURLSameOrigin":28,"./../helpers/parseHeaders":30,"./../utils":33}],6:[function(require,module,exports){
+},{"../cancel/Cancel":6,"../core/buildFullPath":11,"../core/createError":12,"../defaults/transitional":19,"./../core/settle":16,"./../helpers/buildURL":22,"./../helpers/cookies":24,"./../helpers/isURLSameOrigin":27,"./../helpers/parseHeaders":29,"./../utils":32}],5:[function(require,module,exports){
 'use strict';
 
 var utils = require('./utils');
@@ -585,7 +492,7 @@ module.exports = axios;
 // Allow use of default import syntax in TypeScript
 module.exports.default = axios;
 
-},{"./cancel/Cancel":7,"./cancel/CancelToken":8,"./cancel/isCancel":9,"./core/Axios":10,"./core/mergeConfig":16,"./defaults":19,"./env/data":21,"./helpers/bind":22,"./helpers/isAxiosError":27,"./helpers/spread":31,"./utils":33}],7:[function(require,module,exports){
+},{"./cancel/Cancel":6,"./cancel/CancelToken":7,"./cancel/isCancel":8,"./core/Axios":9,"./core/mergeConfig":15,"./defaults":18,"./env/data":20,"./helpers/bind":21,"./helpers/isAxiosError":26,"./helpers/spread":30,"./utils":32}],6:[function(require,module,exports){
 'use strict';
 
 /**
@@ -606,7 +513,7 @@ Cancel.prototype.__CANCEL__ = true;
 
 module.exports = Cancel;
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 var Cancel = require('./Cancel');
@@ -727,14 +634,14 @@ CancelToken.source = function source() {
 
 module.exports = CancelToken;
 
-},{"./Cancel":7}],9:[function(require,module,exports){
+},{"./Cancel":6}],8:[function(require,module,exports){
 'use strict';
 
 module.exports = function isCancel(value) {
   return !!(value && value.__CANCEL__);
 };
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -884,7 +791,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = Axios;
 
-},{"../helpers/buildURL":23,"../helpers/validator":32,"./../utils":33,"./InterceptorManager":11,"./dispatchRequest":14,"./mergeConfig":16}],11:[function(require,module,exports){
+},{"../helpers/buildURL":22,"../helpers/validator":31,"./../utils":32,"./InterceptorManager":10,"./dispatchRequest":13,"./mergeConfig":15}],10:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -940,7 +847,7 @@ InterceptorManager.prototype.forEach = function forEach(fn) {
 
 module.exports = InterceptorManager;
 
-},{"./../utils":33}],12:[function(require,module,exports){
+},{"./../utils":32}],11:[function(require,module,exports){
 'use strict';
 
 var isAbsoluteURL = require('../helpers/isAbsoluteURL');
@@ -962,7 +869,7 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
   return requestedURL;
 };
 
-},{"../helpers/combineURLs":24,"../helpers/isAbsoluteURL":26}],13:[function(require,module,exports){
+},{"../helpers/combineURLs":23,"../helpers/isAbsoluteURL":25}],12:[function(require,module,exports){
 'use strict';
 
 var enhanceError = require('./enhanceError');
@@ -982,7 +889,7 @@ module.exports = function createError(message, config, code, request, response) 
   return enhanceError(error, config, code, request, response);
 };
 
-},{"./enhanceError":15}],14:[function(require,module,exports){
+},{"./enhanceError":14}],13:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1071,7 +978,7 @@ module.exports = function dispatchRequest(config) {
   });
 };
 
-},{"../cancel/Cancel":7,"../cancel/isCancel":9,"../defaults":19,"./../utils":33,"./transformData":18}],15:[function(require,module,exports){
+},{"../cancel/Cancel":6,"../cancel/isCancel":8,"../defaults":18,"./../utils":32,"./transformData":17}],14:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1116,7 +1023,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
   return error;
 };
 
-},{}],16:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -1217,7 +1124,7 @@ module.exports = function mergeConfig(config1, config2) {
   return config;
 };
 
-},{"../utils":33}],17:[function(require,module,exports){
+},{"../utils":32}],16:[function(require,module,exports){
 'use strict';
 
 var createError = require('./createError');
@@ -1244,7 +1151,7 @@ module.exports = function settle(resolve, reject, response) {
   }
 };
 
-},{"./createError":13}],18:[function(require,module,exports){
+},{"./createError":12}],17:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1268,7 +1175,7 @@ module.exports = function transformData(data, headers, fns) {
   return data;
 };
 
-},{"../defaults":19,"./../utils":33}],19:[function(require,module,exports){
+},{"../defaults":18,"./../utils":32}],18:[function(require,module,exports){
 (function (process){(function (){
 'use strict';
 
@@ -1403,7 +1310,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 module.exports = defaults;
 
 }).call(this)}).call(this,require('_process'))
-},{"../adapters/http":5,"../adapters/xhr":5,"../core/enhanceError":15,"../helpers/normalizeHeaderName":29,"../utils":33,"./transitional":20,"_process":2}],20:[function(require,module,exports){
+},{"../adapters/http":4,"../adapters/xhr":4,"../core/enhanceError":14,"../helpers/normalizeHeaderName":28,"../utils":32,"./transitional":19,"_process":1}],19:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -1412,11 +1319,11 @@ module.exports = {
   clarifyTimeoutError: false
 };
 
-},{}],21:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 module.exports = {
   "version": "0.26.1"
 };
-},{}],22:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 'use strict';
 
 module.exports = function bind(fn, thisArg) {
@@ -1429,7 +1336,7 @@ module.exports = function bind(fn, thisArg) {
   };
 };
 
-},{}],23:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1501,7 +1408,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
   return url;
 };
 
-},{"./../utils":33}],24:[function(require,module,exports){
+},{"./../utils":32}],23:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1517,7 +1424,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
     : baseURL;
 };
 
-},{}],25:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1572,7 +1479,7 @@ module.exports = (
     })()
 );
 
-},{"./../utils":33}],26:[function(require,module,exports){
+},{"./../utils":32}],25:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1588,7 +1495,7 @@ module.exports = function isAbsoluteURL(url) {
   return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(url);
 };
 
-},{}],27:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1603,7 +1510,7 @@ module.exports = function isAxiosError(payload) {
   return utils.isObject(payload) && (payload.isAxiosError === true);
 };
 
-},{"./../utils":33}],28:[function(require,module,exports){
+},{"./../utils":32}],27:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1673,7 +1580,7 @@ module.exports = (
     })()
 );
 
-},{"./../utils":33}],29:[function(require,module,exports){
+},{"./../utils":32}],28:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -1687,7 +1594,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
   });
 };
 
-},{"../utils":33}],30:[function(require,module,exports){
+},{"../utils":32}],29:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1742,7 +1649,7 @@ module.exports = function parseHeaders(headers) {
   return parsed;
 };
 
-},{"./../utils":33}],31:[function(require,module,exports){
+},{"./../utils":32}],30:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1771,7 +1678,7 @@ module.exports = function spread(callback) {
   };
 };
 
-},{}],32:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 'use strict';
 
 var VERSION = require('../env/data').version;
@@ -1855,7 +1762,7 @@ module.exports = {
   validators: validators
 };
 
-},{"../env/data":21}],33:[function(require,module,exports){
+},{"../env/data":20}],32:[function(require,module,exports){
 'use strict';
 
 var bind = require('./helpers/bind');
@@ -2206,4 +2113,97 @@ module.exports = {
   stripBOM: stripBOM
 };
 
-},{"./helpers/bind":22}]},{},[1]);
+},{"./helpers/bind":21}],33:[function(require,module,exports){
+const yahoo = require("yahoo-finance-webscraper");
+
+const regExp = /[a-zA-Z]/;
+const h2Box = document.querySelector("header>h2");
+
+h2Box.addEventListener("focusin", () => {
+  const h2ChildNodes = h2Box.childNodes;
+  const selection = window.getSelection();
+  if (h2Box.innerText === "Enter ticker...") {
+    h2Box.innerText = "";
+  }
+  //set caret position after text node
+
+  if (h2ChildNodes.length > 0) {
+    console.log(h2ChildNodes);
+    selection.setPosition(h2ChildNodes[0], h2ChildNodes[0].length);
+  } else {
+    selection.setPosition(h2Box, 0);
+  }
+
+  return;
+});
+
+h2Box.addEventListener("keydown", (e) => {
+  let textString = h2Box.innerText;
+  if (textString.length >= 5 && e.key !== "Backspace" && e.key !== "Enter") {
+    e.preventDefault();
+    alert("Character amount exceeded");
+  }
+
+  //prevent navigation keys;
+  if (textString.length > 0) {
+    let navKeys = [
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowDown",
+      "ArrowUp",
+      "Left",
+      "Right",
+      "Up",
+      "Down",
+      "Home",
+      "End",
+      "Del",
+      "Delete",
+      "PageUp",
+      "PageDown",
+      "Insert",
+    ];
+    for (const ele of navKeys) {
+      if (e.key === ele) {
+        e.preventDefault();
+        alert("Invalid entry");
+      }
+    }
+  }
+
+  if (textString === "" && e.key === "Enter") {
+    e.preventDefault();
+    alert("enter a valid ticker");
+  }
+
+  //prevent non-letters
+  //Allow Backspace, Enter keys;
+  //Note: navigation keys are failing the regexp test;
+  if (regExp.test(e.key) === false) {
+    if (e.key !== "Backspace" && e.key !== "Enter") {
+      e.preventDefault();
+      alert("Invalid entry");
+    }
+  }
+
+  return;
+});
+
+h2Box.addEventListener("keyup", (e) => {
+  //needed for removing auto-generated divs in mozilla vs. chrome;
+  let divBr = document.querySelector("h2 div");
+  let brList = document.querySelectorAll("h2 br");
+  if (e.key === "Backspace" || e.key === "Enter") {
+    if (brList.length > 0) {
+      for (br of brList) {
+        br.remove();
+      }
+    }
+    if (divBr) {
+      divBr.remove();
+    }
+  }
+
+  return;
+});
+},{"yahoo-finance-webscraper":2}]},{},[33]);
