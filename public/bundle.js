@@ -2115,7 +2115,10 @@ module.exports = {
 
 },{"./helpers/bind":21}],33:[function(require,module,exports){
 const yahoo = require("yahoo-finance-webscraper");
-console.log(yahoo);
+const results = yahoo.getSingleStockInfo("NFLX").then((data) => {
+  console.log(data);
+});
+console.log(results);
 
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
@@ -2207,4 +2210,5 @@ h2Box.addEventListener("keyup", (e) => {
 
   return;
 });
+
 },{"yahoo-finance-webscraper":2}]},{},[33]);

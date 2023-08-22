@@ -32,7 +32,8 @@
     "express": "^4.18.2",
     "needle": "^3.2.0",
     "require": "^0.4.4",
-    "yahoo-finance-webscraper": "^3.0.1"
+    "yahoo-finance-webscraper": "^3.0.1",
+    "yahoo-finance2": "^2.4.4"
   },
   "keywords": [],
   "description": ""
