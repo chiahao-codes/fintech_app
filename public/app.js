@@ -1,8 +1,9 @@
 const yahoo = require("yahoo-finance-webscraper");
-let stockData = yahoo.getSingleStockInfo("tsm").then((data) => {
-  return data
+yahoo.getSingleStockInfo("TSM").then((data) => {
+  console.log(data)
+  return 
 });
-console.log(stockData);
+
 
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
