@@ -1,10 +1,10 @@
 {
-  "name": "QashFlow",
+  "name": "freeqash",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
     "test": "",
-    "start": "node app.js",
+    "start": "node ./public/app.js",
     "bro": "browserify ./public/app.js > ./public/bundle.js && nodemon ./proxy/server.js",
     "dev": "nodemon ./proxy/server.js",
     "serve": "node ./proxy/server.js"
