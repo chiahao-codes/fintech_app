@@ -2117,7 +2117,9 @@ module.exports = {
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 const yahoo = require("yahoo-finance-webscraper");
-console.log(yahoo.getSingleStockInfo());
+yahoo.getSingleStockInfo('AAPL').then((data) => {
+  console.log(data)
+})
 
 h2Box.addEventListener("focusin", () => {
   const h2ChildNodes = h2Box.childNodes;
