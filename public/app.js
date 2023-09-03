@@ -1,6 +1,3 @@
-const yahoo = require("yahoo-finance-webscraper");
-console.log(yahoo.getSingleStockInfo('AAPL'));
-
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
