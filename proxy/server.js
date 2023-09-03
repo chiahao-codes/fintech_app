@@ -13,10 +13,12 @@ app.use((req, res, next) => {
   next();
 })
 
+app.get("/", (req, res) => {
+  console.log(res.json(data));
+})
 
 app.listen(PORT, () => {
     console.log("Proxy listening on port:", PORT);
-  
 });
 
 /**
