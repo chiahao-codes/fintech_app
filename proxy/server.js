@@ -1,6 +1,8 @@
 //allow for env variables;
 require('dotenv').config();
 const express = require('express');
+const yahoo2 = require('yahoo-finance2').default;
+
 
 //const cors = require('cors');
 const PORT = process.env.PORT || 8080;
@@ -13,8 +15,14 @@ app.use((req, res, next) => {
   next();
 })
 
-app.get("/", (req, res) => {
-  console.log(res.json(data));
+
+let stock = 'ABNB';
+
+app.get("/stock", async (req, res, next) => {
+  let quote = await yahoo2.quoteSummary(stock, {modules:["financialData"]});
+  console.log(quote);
+  res.json(quote);
+  next();
 })
 
 app.listen(PORT, () => {

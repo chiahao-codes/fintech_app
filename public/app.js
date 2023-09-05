@@ -1,9 +1,13 @@
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
-const yahoo = require("yahoo-finance-webscraper");
-yahoo.getSingleStockInfo('AAPL').then((data) => {
-  console.log(data)
-})
+
+
+const result = async function () {
+  let stockInfo = await yf("NFLX").then((data) => {
+    return data;
+  });
+  return stockInfo;
+};
 
 h2Box.addEventListener("focusin", () => {
   const h2ChildNodes = h2Box.childNodes;
@@ -92,3 +96,5 @@ h2Box.addEventListener("keyup", (e) => {
 
   return;
 });
+let stockInfo = result();
+module.exports = stockInfo;
