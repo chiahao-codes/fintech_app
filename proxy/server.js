@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 })
 
 
-let stock = 'ABNB';
+let stock = 'TSM';
 
 app.get("/stock", async (req, res, next) => {
   let quote = await yahoo2.quoteSummary(stock, {modules:["financialData"]});
