@@ -88,5 +88,3 @@ h2Box.addEventListener("keyup", (e) => {
 
   return;
 });
-let stockInfo = result();
-module.exports = stockInfo;
