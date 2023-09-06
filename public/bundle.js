@@ -2,14 +2,6 @@
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
-
-const result = async function () {
-  let stockInfo = await yf("NFLX").then((data) => {
-    return data;
-  });
-  return stockInfo;
-};
-
 h2Box.addEventListener("focusin", () => {
   const h2ChildNodes = h2Box.childNodes;
   const selection = window.getSelection();

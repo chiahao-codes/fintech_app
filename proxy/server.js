@@ -18,8 +18,8 @@ app.use((req, res, next) => {
 
 let stock = 'ABNB';
 
-app.get("/stock", async (req, res, next) => {
-  let quote = await yahoo2.quoteSummary(stock, {modules:["cashflowStatementHistory"]});
+app.get("/stock",  (req, res, next) => {
+  let quote =  yahoo2.quoteSummary(stock, {modules:["financialData"]});
   console.log(quote);
   res.json(quote);
   next();
