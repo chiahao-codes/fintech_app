@@ -1,5 +1,15 @@
+const express = require("express");
+const { financials, quotes } = require("barchart-dot-com");
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
+const body = document.querySelector("body");
+
+body.addEventListener("keydown", (e) => {
+  let keyName = e.key;
+  if (keyName === "Enter") {
+    console.log(keyName);
+  }
+})
 
 h2Box.addEventListener("focusin", () => {
   const h2ChildNodes = h2Box.childNodes;
@@ -88,3 +98,9 @@ h2Box.addEventListener("keyup", (e) => {
 
   return;
 });
+
+//Keyboard event for the Body
+/**
+ * When "Enter" is pressed, grab the data from npm module
+ * and populate inside html or ejs;
+ */
