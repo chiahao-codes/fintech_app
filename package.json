@@ -21,8 +21,7 @@
   "homepage": "https://github.com/chiahao-codes/fintech_app#readme",
   "devDependencies": {
     "jest": "^29.6.1",
-    "nodemon": "^3.0.1",
-    "yf-web-scraper": "^1.21.1"
+    "nodemon": "^3.0.1"
   },
   "dependencies": {
     "barchart-dot-com": "^1.0.6",
