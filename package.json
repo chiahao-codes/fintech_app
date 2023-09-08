@@ -4,7 +4,6 @@
   "main": "app.js",
   "scripts": {
     "test": "",
-    "build": "esbuild ./public/app.js --bundle --outfile=bundled.js",
     "start": "node ./public/app.js",
     "dev": "nodemon ./proxy/server.js",
     "serve": "node ./proxy/server.js"
