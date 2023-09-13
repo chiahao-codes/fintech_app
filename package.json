@@ -7,7 +7,7 @@
   "scripts": {
     "test": "",
     "start": "node ./public/app.js",
-    "dev": "nodemon ./proxy/server.js",
+    "dev": "nodemon ./proxy/server.js && node ./public/app.js",
     "serve": "node ./proxy/server.js"
   },
   "repository": {

@@ -1,6 +1,7 @@
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
+
 h2Box.addEventListener("click", () => {
   const h2ChildNodes = h2Box.childNodes;
   const selection = window.getSelection();
@@ -90,9 +91,3 @@ h2Box.addEventListener("keyup", (e) => {
 
   return;
 });
-
-//Keyboard event for the Body
-/**
- * When "Enter" is pressed, grab the data from npm module
- * and populate inside html or ejs;
- */
