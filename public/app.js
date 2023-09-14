@@ -45,14 +45,20 @@ h2Box.addEventListener("keydown", (e) => {
       "PageDown",
       "Insert",
     ];
+
     for (const ele of navKeys) {
       if (e.key === ele) {
         e.preventDefault();
         alert("Invalid entry");
       }
     }
+
     if (e.key === "Enter") {
-      console.log("Run get request for stock data...");
+      //enter the ticker string into the url parameter
+      //grab the URL;
+      let url = window.location.href;
+      let tickerSearch = url + "stock/" + textString;
+      window.location.href = tickerSearch;
     }
   }
 

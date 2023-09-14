@@ -8,12 +8,21 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.get("/", (req, res, next) => {
-  res.render("index.ejs");
-});
-
 app.use(express.static("public"));
 app.use(bodyParser.json());
+
+app.get("/", (req, res, next) => {
+  res.render("index.ejs");
+  next();
+});
+
+//stock data get request:
+app.get("/stock/:ticker", (req, res, next) => {
+    let ticker = req.params.ticker;
+    res.send(ticker);
+    next()
+});
+
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
