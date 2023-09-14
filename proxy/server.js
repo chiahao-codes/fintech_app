@@ -1,5 +1,3 @@
-//allow for env variables;
-import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 
@@ -9,6 +7,11 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
+app.use((req, res, next) => {
+res.header("Access-Control-Allow-Origin", "*");
+next();
+});
+
 app.use(bodyParser.json());
 
 app.get("/", (req, res, next) => {
@@ -20,12 +23,6 @@ app.get("/", (req, res, next) => {
 app.get("/stock/:ticker", (req, res, next) => {
     let ticker = req.params.ticker;
     res.send(ticker);
-    next()
-});
-
-
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
     next();
 });
   
