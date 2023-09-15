@@ -1,6 +1,7 @@
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
+
 h2Box.addEventListener("click", () => {
   const h2ChildNodes = h2Box.childNodes;
   const selection = window.getSelection();
@@ -84,9 +85,10 @@ h2Box.addEventListener("keyup", (e) => {
   let divBr = document.querySelector("h2 div");
   let brList = document.querySelectorAll("h2 br");
   if (e.key === "Backspace" || e.key === "Enter") {
+
     if (brList.length > 0) {
       for (br of brList) {
-        br.remove();
+        if(br)br.remove();
       }
     }
     if (divBr) {
@@ -96,3 +98,5 @@ h2Box.addEventListener("keyup", (e) => {
 
   return;
 });
+
+export const tickerString = h2Box.innerText;
