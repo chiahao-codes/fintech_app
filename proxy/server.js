@@ -1,8 +1,5 @@
 import express from 'express';
-import bodyParser from 'body-parser';
-import fetch from 'node-fetch';
-import { financials } from 'barchart-dot-com';
-
+import router from '../public/data.js';
 const PORT = process.env.PORT || 8080;
 const app = express();
 
@@ -15,22 +12,14 @@ res.header("Access-Control-Allow-Origin", "*");
 next();
 });
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.get("/", (req, res, next) => {
   res.render("index.ejs");
   next();
 });
 
-//stock data get request:
-//get data for: income statement, balance sheet, cash flow;
-app.get("/stock/:ticker", async (req, res, next) => {
-  let ticker = req.params.ticker;
-  let cashFlow = await financials.cashFlow(ticker).annual();
-  res.send(cashFlow);
-    next();
-});
-  
+app.use("/stock", router);
 
 app.listen(PORT, () => {
     console.log("Proxy listening on port:", PORT);
