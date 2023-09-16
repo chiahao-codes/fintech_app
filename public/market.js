@@ -7,7 +7,7 @@ routerM.get("/", async (req, res, next) => {
   let marketData = await cnbcMarket();
   console.log(marketData);
   //might need to iterate over marketData and declare variables for ejs use.
-  res.render("index.ejs", {
+  res.render("market.ejs", {
     //declare variables for ejs usage;
     //key:value;
   });

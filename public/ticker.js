@@ -10,8 +10,10 @@ router.get("/:ticker", async (req, res, next) => {
     res.status(400).send("Invalid ticker");
     return;
   }
-  let cashFlow = await financials.cashFlow(ticker).annual();
-  res.send(cashFlow);
+    let cashFlow = await financials.cashFlow(ticker).annual();
+    //res.render("ticker.ejs");
+    //console.log(cashFlow);
+    res.send(cashFlow);
   next();
 });
 
