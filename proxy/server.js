@@ -1,5 +1,6 @@
 import express from 'express';
 import router from '../public/data.js';
+import routerM from '../public/market.js';
 const PORT = process.env.PORT || 8080;
 const app = express();
 
@@ -13,13 +14,9 @@ next();
 });
 
 app.use(express.json());
-
-app.get("/", (req, res, next) => {
-  res.render("index.ejs");
-  next();
-});
-
+app.use("/", routerM);
 app.use("/stock", router);
+
 
 app.listen(PORT, () => {
     console.log("Proxy listening on port:", PORT);

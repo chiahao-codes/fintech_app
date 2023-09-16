@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "barchart-dot-com": "^1.0.6",
+    "cnbc-market": "^3.0.0",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2"
