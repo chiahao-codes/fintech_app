@@ -101,11 +101,7 @@ body {
     animation-iteration-count: infinite;
     opacity: 1;
   }
-  body>h1{
-    position: relative;
-    color: var(--cold-white);
-    margin: auto;
-  }
+  
   body footer{
     display: flex;  
     flex-direction: column;
