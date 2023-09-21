@@ -20,11 +20,15 @@ body {
 /*mobile display*/
 @media screen and (min-width: 320px) {
   body {
-    display: block;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: "Noto Sans", sans-serif;
     width: 100%;
+    min-height: 100vh;
+    overflow-y: scroll;
     overflow-x: hidden;
-    position: relative;
     background-color: var(--greenish);
   }
 
@@ -36,7 +40,6 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 50px;
     overflow: hidden;
   }
 
@@ -102,18 +105,55 @@ body {
     opacity: 1;
   }
   
+  body #index_section_container{
+    display: grid;
+    justify-content: center;
+    padding:10px;
+    grid-template-columns: repeat(3, 83px);
+    grid-template-rows: repeat(5, 55px);
+    row-gap: 25px;
+    column-gap: 20px;
+    width: 100%;
+    height: max-content;
+    position: relative;
+    top:50px;
+    border: 1px solid gold;
+    color: var(--cold-white);
+  }
+
+  body #index_section_container .index_container {
+    display: flex;
+    flex-direction: column;
+    
+    border: 1px solid white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  #index_section_container .index_container .mkt_name{
+    text-align: center;
+    color: var(--cold-white);
+    font-weight: 600;
+  }
+
+  #index_section_container .index_container .price{
+    text-align: center;
+    color: var(--cold-white);
+    font-weight: 600;
+  }
+
   body footer{
     display: flex;  
     flex-direction: column;
     justify-content: center;
     gap: 6px;
-    position: fixed;
+    position: relative;
+    top: 100px;
     bottom:0;
     left:0;
     right:0;
     width:100%;
     height: max-content;
-    overflow: hidden;
     padding:10px 20px 8px;
     font-size:15px;
     line-height:24px;
@@ -124,6 +164,7 @@ body {
 body footer .container {
   display: flex;
   justify-content: space-around;
+  column-gap: 3px;
   width:100%;
 }
 
@@ -135,7 +176,7 @@ body footer #footer-top-row{
 }
 
 body footer .container .first-child {
-width: 200px;
+width: 175px;
 }
 
 body footer .container .second-child{
