@@ -110,7 +110,7 @@ body {
     justify-content: center;
     padding:10px;
     grid-template-columns: repeat(3, 83px);
-    grid-template-rows: repeat(5, 55px);
+    grid-template-rows: repeat(5, 57px);
     row-gap: 25px;
     column-gap: 20px;
     width: 100%;
@@ -122,12 +122,13 @@ body {
   }
 
   body #index_section_container .index_container {
+    position: relative;
     display: flex;
     flex-direction: column;
-    
+    row-gap: 1px;
     border: 1px solid white;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: visible;
   }
 
   #index_section_container .index_container .mkt_name{
@@ -141,6 +142,16 @@ body {
     color: var(--cold-white);
     font-weight: 600;
   }
+
+   #index_section_container .index_container .img_container{
+    position:relative;
+    top:3px;
+    bottom:0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2.5px;
+   }
 
   body footer{
     display: flex;  
