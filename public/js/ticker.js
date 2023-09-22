@@ -1,5 +1,5 @@
 import express from "express";
-import { financials, quotes } from "barchart-dot-com";
+
 import yahooFinance from "yahoo-finance2";
 const router = express.Router();
 
