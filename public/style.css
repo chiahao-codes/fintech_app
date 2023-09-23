@@ -153,10 +153,6 @@ body {
     column-gap: 2.5px;
    }
 
-   #index_section_container .index_container .img_container .percent_change{
-    color:red;
-   }
-
   body footer{
     display: flex;  
     flex-direction: column;

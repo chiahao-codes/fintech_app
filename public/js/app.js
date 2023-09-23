@@ -1,5 +1,9 @@
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
+const idxPercentChangeColor = document.querySelectorAll("section > .index_container > .img_container > .percent_change");
+/**
+ * 
+ */
 
 
 h2Box.addEventListener("click", () => {
@@ -98,5 +102,18 @@ h2Box.addEventListener("keyup", (e) => {
 
   return;
 });
+
+idxPercentChangeColor.forEach((ele) => {
+  let regExpDash = /[-]/;
+
+  if (regExpDash.test(ele.innerText)) {
+    ele.style.color = "red";
+  } else {
+    ele.style.color = "#07e342";
+  }
+
+  return ele;
+});
+
 
 export const tickerString = h2Box.innerText;

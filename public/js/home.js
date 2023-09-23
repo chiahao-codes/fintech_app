@@ -7,7 +7,8 @@ const routerM = express.Router();
 routerM.get("/", async (req, res, next) => {
   let marketData = await cnbcMarket();
   console.log(marketData);
-  //might need to iterate over marketData and declare variables for ejs use.
+
+  let regExp = /[-]/;
   res.render("home.ejs", {
     snp: marketData[0],
     nasdaq: marketData[1],
@@ -24,6 +25,17 @@ routerM.get("/", async (req, res, next) => {
     doller: marketData[22],
     russell: marketData[28],
     tsx: marketData[29],
+    getSource: function (indxChange) {
+      let direction = "";
+   
+      if (regExp.test(indxChange)) {
+        direction = "down";
+      } else {
+        direction = "up";
+      }
+      let src = `/assets/icons8-${direction}-arrow-17.ico`;
+      return src;
+    }
   });
   next();
 });
