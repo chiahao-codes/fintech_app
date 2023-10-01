@@ -1,8 +1,6 @@
 import express from "express";
 import cnbcMarket from "cnbc-market";
-import countdown from "countdown";
 const routerM = express.Router();
-//const regExpMkt = /(Opening|Closing)/;
 
 routerM.get("/", async (req, res, next) => {
   let marketData = await cnbcMarket();
@@ -65,4 +63,4 @@ routerM.get("/", async (req, res, next) => {
   next();
 });
 
-export default [routerM, countdown];
+export default [routerM];
