@@ -16,9 +16,8 @@ router.get("/:ticker", async (req, res, next) => {
     if (result.displayName) {
       res.json([result.symbol, result.displayName]);
     } else {
-      res.json([result]);
+      res.json([result.symbol]);
     }
-    
   }
 
   next();

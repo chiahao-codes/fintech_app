@@ -1,5 +1,6 @@
 import express from "express";
 import cnbcMarket from "cnbc-market";
+import yahooFinance from "yahoo-finance2";
 const routerM = express.Router();
 
 routerM.get("/", async (req, res, next) => {
@@ -36,29 +37,7 @@ routerM.get("/", async (req, res, next) => {
       if (6 < currHour && currMinutes < 30) {
         return false;
       }
-    },
-    getIndexChange: (indexCh) => {
-      let src = "",
-        dir,
-        counter = 0;
-      let indexArrowUpdate = (indexCh) => {
-        let regExp = /[-]/;
-        dir = "up";
-
-        if (regExp.test(indexCh)) {
-          dir = "down";
-        }
-
-        return;
-      };
-
-      indexArrowUpdate(indexCh);
-      src = `/assets/icons8-${dir}-arrow-17.ico`;
-
-      setInterval(indexArrowUpdate, 5000, indexCh, dir, counter);
-
-      return src;
-    },
+    }
   });
   next();
 });

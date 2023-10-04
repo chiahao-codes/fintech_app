@@ -7,10 +7,11 @@
 }
 
 :root {
-  --cold-white:#f3fdfb;
+  --cold-white:#ffffff;
   --greenish:#012c12;
   --purp:#a90f6e;
   --lightgreen:#097969;
+  --footgreen:#113921;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
     min-height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: white;
+    background-color: var(--greenish);
   }
 
 
@@ -108,7 +109,7 @@ body {
 
   body #timer_container{
     position: relative;
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -116,6 +117,7 @@ body {
     width: max-content;
     row-gap: 2px;
     font-family: 'Noto Sans', sans-serif;
+    color: white;
   }
   
   body #index_section_container{
@@ -184,8 +186,8 @@ body {
     padding:10px 20px 8px;
     font-size:15px;
     line-height:24px;
-    color:var(--cold-white);
-    background-color: #113921;
+    color:rgb(3, 0, 15);
+    background-color: rgb(255, 255, 255)
   }
 
 body footer .container {
@@ -218,12 +220,11 @@ body footer .container .second-child{
   body footer .container #links ul{
     list-style: none;
     font-size: 9px;
-    color:inherit;
   }
 
   footer .container .first-child h6 .link, footer .container .second-child ul li .link,
    footer .container .second-child h6 .link{
-    color: var(--cold-white);
+    color: rgb(3, 0, 15);;
     text-decoration: none;
   }
 
