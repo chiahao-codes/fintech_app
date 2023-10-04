@@ -8,18 +8,24 @@ const router = express.Router();
 router.get("/:ticker", async (req, res, next) => {
   let ticker = req.params.ticker;
   //validation:
-  let result = await yahooFinance.quote(ticker);
-  if (!result) {
-    res.sendStatus(400);
+  let result;
+  try {
+    result = await yahooFinance.quote(ticker);
+  } catch (error) {
+    console.warn(`Error:${error}`);
     return
-  } else {
-    if (result.displayName) {
-      res.json([result.symbol, result.displayName]);
-    } else {
-      res.json([result.symbol]);
-    }
   }
-
+  
+   if (!result) {
+     res.sendStatus(400);
+     return;
+   } else {
+     if (result.displayName) {
+       res.json([result.symbol, result.displayName]);
+     } else {
+       res.json([result.symbol]);
+     }
+   }
   next();
 });
 
@@ -28,9 +34,4 @@ export default router
 
 
 /**
- * 
- *   let stock = await quotes.overview(ticker);
- *   let cashFlow = await financials.cashFlow(ticker).annual();
-  let incomeStmt = await financials.income(ticker).annual();
-  let balanceSht = await financials.balanceSheet(ticker).annual();
  */

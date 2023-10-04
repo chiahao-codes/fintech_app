@@ -153,6 +153,23 @@ h2Box.addEventListener("click", () => {
   return;
 });
 
+h2Box.addEventListener("focus", () => {
+  const h2ChildNodes = h2Box.childNodes;
+  const selection = window.getSelection();
+  if (h2Box.innerText === "Enter ticker...") {
+    h2Box.innerText = "";
+  }
+  //set caret position after text node
+
+  if (h2ChildNodes.length > 0) {
+    selection.setPosition(h2ChildNodes[0], h2ChildNodes[0].length);
+  } else {
+    selection.setPosition(h2Box, 0);
+  }
+
+  return;
+});
+
 h2Box.addEventListener("keydown", (e) => {
   let textString = h2Box.innerText;
   if (textString.length >= 5 && e.key !== "Backspace" && e.key !== "Enter") {
@@ -193,7 +210,7 @@ h2Box.addEventListener("keydown", (e) => {
       alert("enter a valid ticker");
     }
 
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && textString !== "") {
       //enter the ticker string into the url parameter
       //grab the URL;
       let url = window.location.href;
