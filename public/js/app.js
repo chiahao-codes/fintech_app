@@ -75,34 +75,23 @@ let startCountDown = (mkt) => {
     );
     let seconds = Math.floor((timeUntilClosing % (1000 * 60)) / 1000);
 
-    /**
-     *     let countdownTime = countdown(
-      null,
-      closingBell,
-      countdown.HOURS & countdown.MINUTES & countdown.SECONDS
-    ).toString();
-    console.log(countdownTime);
-     */
     return `${hours}h ${minutes}m ${seconds}s`;
   };
 
-  let openingClosingFunc, counter;
+  let counter;
 
   if (mkt === "Opening") {
     counter = openingBellCountdown();
-    openingClosingFunc = openingBellCountdown;
   }
 
   if (mkt === "Closing") {
     counter = closingBellCountdown();
-    openingClosingFunc = closingBellCountdown;
   }
 
   return counter;
 };
 
-document.querySelector("body>#timer_container>#market_clock").innerText =
-startCountDown(marketStatus);
+document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(marketStatus);
 
 imgContainer.forEach((ele) => {
   let children = ele.children;

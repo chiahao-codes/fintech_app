@@ -12,6 +12,7 @@
   --purp:#a90f6e;
   --lightgreen:#097969;
   --footgreen:#113921;
+  --midnight:#03000f;
 }
 
 body {
@@ -186,7 +187,7 @@ body {
     padding:10px 20px 8px;
     font-size:15px;
     line-height:24px;
-    color:rgb(3, 0, 15);
+    color: var(--midnight);
     background-color: rgb(255, 255, 255)
   }
 
@@ -201,7 +202,7 @@ body footer #footer-top-row{
   padding-bottom: 5px;
   border-bottom-width: .7px;
   border-bottom-style: solid;
-  border-bottom-color: var(--cold-white);
+  border-bottom-color: var(--midnight);
 }
 
 body footer .container .first-child {
