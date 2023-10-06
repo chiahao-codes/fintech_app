@@ -5,10 +5,10 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "test": "",
-    "start": "node ./public/app.js",
-    "dev": "nodemon ./proxy/server.js && node ./public/app.js",
-    "serve": "node ./proxy/server.js"
+    "build": "webpack --mode production",
+    "start": "node ./public/src/js/app.js",
+    "dev": "nodemon ./public/src/js/proxy/server.js && node ./public/src/js/app.js",
+    "serve": "node ./public/src/js/proxy/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,9 @@
   "homepage": "https://github.com/chiahao-codes/fintech_app#readme",
   "devDependencies": {
     "jest": "^29.6.1",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "cnbc-market": "^3.0.0",

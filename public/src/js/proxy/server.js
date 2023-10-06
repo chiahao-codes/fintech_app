@@ -1,10 +1,8 @@
 import express from 'express';
-import router from '../public/js/ticker.js';
-import routerM from '../public/js/home.js';
+import router from '../ticker.js';
+import routerM from '../home.js';
 const PORT = process.env.PORT || 8080;
 const app = express();
-
-app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
 

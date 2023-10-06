@@ -1,6 +1,7 @@
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
-const imgContainer = document.querySelectorAll(
+
+let imgContainer = document.querySelectorAll(
   "section > .index_container > .img_container"
 );
 const regExpMkt = /(Opening|Closing)/;
@@ -131,7 +132,7 @@ function clockImgInterval() {
 
       children[0].src = `/assets/icons8-${dir}-arrow-17.ico`;
     });
-  }, 7000);
+  }, 8000);
 }
 
 clockImgInterval();

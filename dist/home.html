@@ -18,12 +18,12 @@
     <header>
         <h2 contenteditable="true"><span>Enter ticker...</span></h2>
     </header>
-    <div id="timer_container">
-        <% let marketTime = marketClock() %>
+    <div id="timer_container">     
         <% let marketStatus = "Opening" %>
-        <% if(marketTime) {%>
+        <% if(marketClock() === "true") {%>
             <% marketStatus = "Closing" %>
             <% } %>
+           
         <h6><%=`${marketStatus} Bell In:`%></h6>
            <p id="market_clock"></p>
     </div>
@@ -35,6 +35,9 @@
         <h6 class="price">
             <%=snp.value%>
         </h6>
+        <%setInterval(()=> {%>
+            <% cnbc() %>
+                <% }, 5000); %>
         <div class="img_container">
             <img src="" alt="arrow">
             <h6 class="percent_change">
@@ -170,7 +173,7 @@
             </div>
         </div>
     </footer>
-    <script type="module" src="/js/app.js"></script>
+    <script type="module" src="bundle.js"></script>
 </body>
 
 

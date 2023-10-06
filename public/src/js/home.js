@@ -1,11 +1,21 @@
 import express from "express";
+import path from 'path';
 import cnbcMarket from "cnbc-market";
-import yahooFinance from "yahoo-finance2";
 const routerM = express.Router();
 
-routerM.get("/", async (req, res, next) => {
-  let marketData = await cnbcMarket();
-  res.render("home.ejs", {
+//let marketData = await cnbcMarket();
+
+routerM.get("/", (req, res, next) => {
+  return res.sendFile(path.join("C:/Desktop/Ticqer","/dist/home.html"));
+  
+});
+
+export default routerM;
+
+
+ /**
+   *  res.render("home.ejs", {
+    cnbc:cnbcMkt,
     snp: marketData[0],
     nasdaq: marketData[1],
     ftse: marketData[2],
@@ -25,21 +35,19 @@ routerM.get("/", async (req, res, next) => {
       let currFullDate = new Date();
       let currHour = currFullDate.getHours();
       let currMinutes = currFullDate.getMinutes();
+
       //market is open (PST):
-      if (6 < currHour && 30 < currMinutes) {
-        if (currHour < 13) return true;
+      if (6 <= currHour && 30 <= currMinutes && currHour < 13) {
+        return "true";
       }
       //market is closed (PST):
-      if (13 < currHour || currHour < 6) {
-        return false;
+      if (13 <= currHour || currHour < 6) {
+        return "false";
       }
 
-      if (6 < currHour && currMinutes < 30) {
-        return false;
+      if (6 == currHour && currMinutes < 30) {
+        return "false";
       }
-    }
+    },
   });
-  next();
-});
-
-export default [routerM];
+   */
