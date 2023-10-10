@@ -8,7 +8,8 @@ module.exports = {
   },
   output: {
     path: path.resolve("C:/Desktop/Ticqer", "dist"),
-    filename: "bundle.js",
+  
+    filename:"[name][contenthash].js",
     clean: true,
   },
   plugins: [
@@ -20,12 +21,7 @@ module.exports = {
       
     }),
   ],
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, "dist"),
-    },
-    historyApiFallback: true,
-    },
+ devtool:'source-map',
     module: {
         rules: [
             {

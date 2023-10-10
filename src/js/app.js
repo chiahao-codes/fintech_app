@@ -118,7 +118,7 @@ function clockImgInterval() {
       startCountDown(marketStatus);
   }, 1000);
 
-  setInterval(() => {
+  /* setInterval(() => {
     imgContainer.forEach((ele) => {
       let children = ele.children;
       let percentChangeTxt = children[1].innerText;
@@ -134,7 +134,7 @@ function clockImgInterval() {
 
       children[0].src = `/assets/icons8-${dir}-arrow-17.ico`;
     });
-  }, 8000);
+  }, 8000);*/
 }
 
 clockImgInterval();
