@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     path: path.resolve("C:/Desktop/Ticqer", "dist"),
-  
+    assetModuleFilename:'[name][ext]',
     filename:"[name][contenthash].js",
     clean: true,
   },
@@ -27,9 +27,14 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use:['style-loader', 'css-loader', 'sass-loader']
-          }
+            },
+            {
+                test: /\.(png|svg|jpg|ico|jpeg)$/i,
+                type:'asset/resource'
+            }
       ]
-  }
+    },
+    
 };
 
 /**

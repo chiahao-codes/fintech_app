@@ -1,5 +1,6 @@
 import '../styles/style.scss'
-
+import down17 from '../assets/down17.ico';
+import up17 from '../assets/up17.ico';
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
