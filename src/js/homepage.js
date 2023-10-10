@@ -6,7 +6,7 @@ const routerM = express.Router();
 //let marketData = await cnbcMarket();
 
 routerM.get("/", (req, res, next) => {
-  return res.sendFile(path.join("C:/Desktop/Ticqer","/dist/home.html"));
+  return res.sendFile(path.join("C:/Desktop/Ticqer","/dist/homepage.html"));
   
 });
 

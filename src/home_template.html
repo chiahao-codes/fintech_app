@@ -19,11 +19,11 @@
         <h2 contenteditable="true"><span>Enter ticker...</span></h2>
     </header>
     <div id="timer_container">     
-        <% let marketStatus = "Opening" %>
-        <% if(marketClock() === "true") {%>
-            <% marketStatus = "Closing" %>
-            <% } %>
+        <!--
+<% let marketStatus = "Opening" %>
            
+        -->
+        
         <h6><%=`${marketStatus} Bell In:`%></h6>
            <p id="market_clock"></p>
     </div>
@@ -33,116 +33,113 @@
             S&P 500
         </h6>
         <h6 class="price">
-            <%=snp.value%>
-        </h6>
-        <%setInterval(()=> {%>
-            <% cnbc() %>
-                <% }, 5000); %>
+                    </h6>
+      
         <div class="img_container">
             <img src="" alt="arrow">
             <h6 class="percent_change">
-                <%=snp.change%>
+                
             </h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">Nasdaq</h6>
-        <h6 class="price"><%=nasdaq.value%></h6>
+        <h6 class="price"></h6>
         <div class="img_container">
             <img src="" alt="arrow">
-            <h6 class="percent_change"><%=nasdaq.change%></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">FTSE 100</h6>
-        <h6 class="price"><%=ftse.value%></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%=ftse.change%></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">Nikkei 225</h6>
-        <h6 class="price"><%= nikkei.value %></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%=nikkei.change%></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">Hang Seng</h6>
-        <h6 class="price"><%= hang.value  %></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%= hang.change %></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">Shanghai</h6>
-        <h6 class="price"><%= shanghai.value %></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%= shanghai.change %></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">WTI Crude</h6>
-        <h6 class="price"><%= wti.value %></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%= wti.change %></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">Natural Gas</h6>
-        <h6 class="price"><%= natgas.value %></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%= natgas.change %></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">Gold</h6>
-        <h6 class="price"><%= gold.value %></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%= gold.change %></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">Silver</h6>
-        <h6 class="price"><%=silver.value %></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%=silver.change %></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">Vix</h6>
-        <h6 class="price"><%=vix.value %></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%=vix.change %></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">U.S. 10-Yr</h6>
-        <h6 class="price"><%=ustenyr.value %></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%=ustenyr.change %></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">ICE USD</h6>
-        <h6 class="price"><%=dollar.value%></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%= dollar.change  %></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">Russell 2000</h6>
-        <h6 class="price"><%= russell.value %></h6>
+        <h6 class="price"></h6>
         <div class="img_container"><img src="" alt="arrow">
-            <h6 class="percent_change"><%= russell.change %></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     <div class="index_container">
         <h6 class="mkt_name">EUR/USD</h6>
-        <h6 class="price"><%= eurusd.value %></h6>
+        <h6 class="price"></h6>
         <div class="img_container">
             <img src="" alt="arrow">
-            <h6 class="percent_change"><%= eurusd.change %></h6>
+            <h6 class="percent_change"></h6>
         </div>
     </div>
     </section>
