@@ -9,14 +9,33 @@ module.exports = {
   output: {
     path: path.resolve("C:/Desktop/Ticqer", "dist"),
     filename: "bundle.js",
+    clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Ticqer",
-      esm: true,
       filename: "homepage.html",
-        template: "src/home_template.html",
-      chunks:['home']
+      template: "src/home_template.html",
+        chunks: ["home"],
+      
     }),
   ],
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
+    historyApiFallback: true,
+    },
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use:['style-loader', 'css-loader', 'sass-loader']
+          }
+      ]
+  }
 };
+
+/**
+ * 
+ */

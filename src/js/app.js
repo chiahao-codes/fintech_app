@@ -1,3 +1,5 @@
+import '../styles/style.scss'
+
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
 
@@ -9,7 +11,7 @@ const mktStatusText = document.querySelector(
   "body > #timer_container > h6"
 ).innerText;
 const marketStatus = regExpMkt.exec(mktStatusText)[0];
-
+console.log("Running...")
 let startCountDown = (mkt) => {
   let currFullDate = new Date();
   let currDate = currFullDate.getDate();
@@ -92,7 +94,7 @@ let startCountDown = (mkt) => {
   return counter;
 };
 
-document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(marketStatus);
+//document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(marketStatus);
 
 imgContainer.forEach((ele) => {
   let children = ele.children;
