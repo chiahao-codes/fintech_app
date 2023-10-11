@@ -5,7 +5,7 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "webpack --mode production && nodemon ./src/js/proxy/server.js && node ./src/js/app.js",
     "serve": "nodemon ./src/js/proxy/server.js && node ./src/js/app.js"
    
   },

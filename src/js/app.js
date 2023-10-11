@@ -10,10 +10,8 @@ const imgContainer = document.querySelectorAll(
   "section > .index_container > .img_container"
 ); 
 
-const date = getDateObj();
-const day = date.dayOfWeek;
-const hour = date.currHour;
-const min = date.currMin;
+let dateObj = getDateObj();
+
 //check market status:
 const marketStatusCheck = (dayOfWeek, currHour, currMin) => {
   let status = "Opening";
@@ -29,22 +27,22 @@ const marketStatusCheck = (dayOfWeek, currHour, currMin) => {
   
 }
 
-let startCountDown = (mkt) => {
-
+let startCountDown = (mkt, dateObj) => {
+  //dayOfWeek, nextDay, currDate, currHour, currYear, currMonth
   let openingBellCountdown = () => {
     //if next day is a weekend:
-    if (dayOfWeek === 5) nextDay = currDate + 3;
-    if (dayOfWeek === 6) nextDay = currDate + 2;
+    if (dateObj.dayOfWeek === 5) dateObj.nextDay = dateObj.currDate + 3;
+    if (dateObj.dayOfWeek === 6) dateObj.nextDay = dateObj.currDate + 2;
 
-    if (0<=currHour && currHour <= 6) {
-      nextDay = currDate;
+    if (0 <= dateObj.currHour && dateObj.currHour <= 6) {
+      dateObj.nextDay = dateObj.currDate;
     }
 
     //set next morning: 6:30am PST
     let openingBell = new Date(
-      currYear,
-      currMonth,
-      nextDay,
+      dateObj.currYear,
+      dateObj.currMonth,
+      dateObj.nextDay,
       6,
       30,
       0,
@@ -68,9 +66,9 @@ let startCountDown = (mkt) => {
 
   let closingBellCountdown = () => {
     let closingBell = new Date(
-      currYear,
-      currMonth,
-      currDate,
+      dateObj.currYear,
+      dateObj.currMonth,
+      dateObj.currDate,
       13,
       0,
       0
@@ -104,9 +102,9 @@ let startCountDown = (mkt) => {
   return counter;
 };
 
-var mktStatus = marketStatusCheck(day, hour, min);
+var mktStatus = marketStatusCheck(dateObj.dayOfWeek, dateObj.currHour, dateObj.currMin);
 document.querySelector("body > #timer_container > h6").innerText = `${mktStatus} Bell in:`;
-document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(mktStatus);
+document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(mktStatus, dateObj);
 
 imgContainer.forEach((ele) => {
   let children = ele.children;
