@@ -2,7 +2,6 @@ import express from "express";
 import path from 'path';
 const routerM = express.Router();
 
-//let marketData = await cnbcMarket();
 
 routerM.get("/", (req, res, next) => {
   return res.sendFile(path.join("C:/Desktop/Ticqer","/dist/homepage.html"));

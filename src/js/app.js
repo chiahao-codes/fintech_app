@@ -1,24 +1,21 @@
 import '../styles/style.scss';
-import cnbcMarket from "cnbc-market";
+import cnbc from './cnbc.js';
+import getDateObj from './date.js';
 import down17 from '../assets/down17.ico';
 import up17 from '../assets/up17.ico';
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
-let imgContainer = document.querySelectorAll(
-  "section > .index_container > .img_container"
-);
 
-  var currFullDate = new Date();
-  var currDate = currFullDate.getDate();
-  var currMonth = currFullDate.getMonth();
-  var currYear = currFullDate.getFullYear();
-  var dayOfWeek = currFullDate.getDay();
-var currHour = currFullDate.getHours();
-var currMin = currFullDate.getMinutes();
-  var nextDay = currDate + 1;
-  
+const imgContainer = document.querySelectorAll(
+  "section > .index_container > .img_container"
+); 
+
+const date = getDateObj();
+const day = date.dayOfWeek;
+const hour = date.currHour;
+const min = date.currMin;
 //check market status:
-let marketStatusCheck = (dayOfWeek, currHour, currMin) => {
+const marketStatusCheck = (dayOfWeek, currHour, currMin) => {
   let status = "Opening";
 
   if (0 < dayOfWeek && dayOfWeek < 6) {
@@ -31,8 +28,6 @@ let marketStatusCheck = (dayOfWeek, currHour, currMin) => {
   return status
   
 }
-
-var mktStatus = marketStatusCheck(dayOfWeek, currHour, currMin);
 
 let startCountDown = (mkt) => {
 
@@ -109,7 +104,7 @@ let startCountDown = (mkt) => {
   return counter;
 };
 
-
+var mktStatus = marketStatusCheck(day, hour, min);
 document.querySelector("body > #timer_container > h6").innerText = `${mktStatus} Bell in:`;
 document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(mktStatus);
 
