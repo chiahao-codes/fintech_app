@@ -1,26 +1,40 @@
-import '../styles/style.scss'
+import '../styles/style.scss';
+import cnbcMarket from "cnbc-market";
 import down17 from '../assets/down17.ico';
 import up17 from '../assets/up17.ico';
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
-
 let imgContainer = document.querySelectorAll(
   "section > .index_container > .img_container"
 );
-const regExpMkt = /(Opening|Closing)/;
-const mktStatusText = document.querySelector(
-  "body > #timer_container > h6"
-).innerText;
-const marketStatus = regExpMkt.exec(mktStatusText)[0];
-console.log("Running...")
+
+  var currFullDate = new Date();
+  var currDate = currFullDate.getDate();
+  var currMonth = currFullDate.getMonth();
+  var currYear = currFullDate.getFullYear();
+  var dayOfWeek = currFullDate.getDay();
+var currHour = currFullDate.getHours();
+var currMin = currFullDate.getMinutes();
+  var nextDay = currDate + 1;
+  
+//check market status:
+let marketStatusCheck = (dayOfWeek, currHour, currMin) => {
+  let status = "Opening";
+
+  if (0 < dayOfWeek && dayOfWeek < 6) {
+    if (currHour === 6 && currMin >=30 || currHour<13) {
+      //market is open:
+      status = "Closing"
+    }
+  }
+
+  return status
+  
+}
+
+var mktStatus = marketStatusCheck(dayOfWeek, currHour, currMin);
+
 let startCountDown = (mkt) => {
-  let currFullDate = new Date();
-  let currDate = currFullDate.getDate();
-  let currMonth = currFullDate.getMonth();
-  let currYear = currFullDate.getFullYear();
-  let dayOfWeek = currFullDate.getDay();
-  let currHour = currFullDate.getHours();
-  let nextDay = currDate + 1;
 
   let openingBellCountdown = () => {
     //if next day is a weekend:
@@ -95,7 +109,9 @@ let startCountDown = (mkt) => {
   return counter;
 };
 
-//document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(marketStatus);
+
+document.querySelector("body > #timer_container > h6").innerText = `${mktStatus} Bell in:`;
+document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(mktStatus);
 
 imgContainer.forEach((ele) => {
   let children = ele.children;
@@ -116,7 +132,7 @@ imgContainer.forEach((ele) => {
 function clockImgInterval() {
   setInterval(() => {
     document.querySelector("body>#timer_container>#market_clock").innerText =
-      startCountDown(marketStatus);
+      startCountDown(mktStatus);
   }, 1000);
 
   /* setInterval(() => {

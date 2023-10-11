@@ -1,6 +1,5 @@
 import express from "express";
 import path from 'path';
-import cnbcMarket from "cnbc-market";
 const routerM = express.Router();
 
 //let marketData = await cnbcMarket();
