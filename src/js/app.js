@@ -1,6 +1,7 @@
 import "../styles/style.scss";
-import runCnbc from "./cnbc.js";
 import { marketStatusCheck, startCountDown } from "./clock.js";
+import updatePrices from "./pricing.js";
+import runCnbc from "./cnbc.js";
 import down17 from "../assets/down17.ico";
 import up17 from "../assets/up17.ico";
 
@@ -41,22 +42,6 @@ function clockImgInterval() {
   }, 8000);*/
 }
 clockImgInterval();
-
-//update prices of index;
-let updatePrices = (prices, runcnbc) => {
-  //get prices from cnbc;
-  let cnbcPrices = runcnbc();
-  console.log(cnbcPrices);
-  //iterate over prices;
-  for (let i = 0; i < prices.length; i++) {
-    let id = prices[i].id;
-
-    if (Object.hasOwn(cnbcPrices, id)) {
-      //update html tag
-      prices[i].innerText = cnbcPrices[id].value;
-    }
-  }
-};
 
 updatePrices(priceOfIndex, runCnbc);
 
