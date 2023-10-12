@@ -30,8 +30,3 @@ router.get("/:ticker", async (req, res, next) => {
 });
 
 export default router
-
-
-
-/**
- */

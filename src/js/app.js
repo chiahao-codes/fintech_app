@@ -1,131 +1,25 @@
-import '../styles/style.scss';
-import cnbc from './cnbc.js';
-import getDateObj from './date.js';
-import down17 from '../assets/down17.ico';
-import up17 from '../assets/up17.ico';
+import "../styles/style.scss";
+import runCnbc from "./cnbc.js";
+import { marketStatusCheck, startCountDown } from "./clock.js";
+import down17 from "../assets/down17.ico";
+import up17 from "../assets/up17.ico";
+
 const regExp = /[a-zA-Z]/;
 const h2Box = document.querySelector("header>h2");
+const index_container = document.querySelectorAll("body > section > .index_container");
+const priceOfIndex = document.querySelectorAll("body > section > .index_container > .price");
+console.log(priceOfIndex);
+const imgContainer = document.querySelectorAll("section > .index_container > .img_container");
+let mktStatus = marketStatusCheck();
 
-const imgContainer = document.querySelectorAll(
-  "section > .index_container > .img_container"
-); 
-
-let dateObj = getDateObj();
-
-//check market status:
-const marketStatusCheck = (dayOfWeek, currHour, currMin) => {
-  let status = "Opening";
-
-  if (0 < dayOfWeek && dayOfWeek < 6) {
-    if (currHour === 6 && currMin >=30 || currHour<13) {
-      //market is open:
-      status = "Closing"
-    }
-  }
-
-  return status
-  
-}
-
-let startCountDown = (mkt, dateObj) => {
-  //dayOfWeek, nextDay, currDate, currHour, currYear, currMonth
-  let openingBellCountdown = () => {
-    //if next day is a weekend:
-    if (dateObj.dayOfWeek === 5) dateObj.nextDay = dateObj.currDate + 3;
-    if (dateObj.dayOfWeek === 6) dateObj.nextDay = dateObj.currDate + 2;
-
-    if (0 <= dateObj.currHour && dateObj.currHour <= 6) {
-      dateObj.nextDay = dateObj.currDate;
-    }
-
-    //set next morning: 6:30am PST
-    let openingBell = new Date(
-      dateObj.currYear,
-      dateObj.currMonth,
-      dateObj.nextDay,
-      6,
-      30,
-      0,
-      0
-    ).getTime();
-
-    let now = Date.now();
-    let timeUntilOpening = openingBell - now;
-
-    let days = Math.floor(timeUntilOpening / (1000 * 60 * 60 * 24));
-    let hours = Math.floor(
-      (timeUntilOpening % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    let minutes = Math.floor(
-      (timeUntilOpening % (1000 * 60 * 60)) / (1000 * 60)
-    );
-    let seconds = Math.floor((timeUntilOpening % (1000 * 60)) / 1000);
-
-    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  };
-
-  let closingBellCountdown = () => {
-    let closingBell = new Date(
-      dateObj.currYear,
-      dateObj.currMonth,
-      dateObj.currDate,
-      13,
-      0,
-      0
-    ).getTime();
-
-    let rightNow = Date.now();
-
-    let timeUntilClosing = closingBell - rightNow;
-
-    let hours = Math.floor(
-      (timeUntilClosing % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    let minutes = Math.floor(
-      (timeUntilClosing % (1000 * 60 * 60)) / (1000 * 60)
-    );
-    let seconds = Math.floor((timeUntilClosing % (1000 * 60)) / 1000);
-
-    return `${hours}h ${minutes}m ${seconds}s`;
-  };
-
-  let counter;
-
-  if (mkt === "Opening") {
-    counter = openingBellCountdown();
-  }
-
-  if (mkt === "Closing") {
-    counter = closingBellCountdown();
-  }
-
-  return counter;
-};
-
-var mktStatus = marketStatusCheck(dateObj.dayOfWeek, dateObj.currHour, dateObj.currMin);
-document.querySelector("body > #timer_container > h6").innerText = `${mktStatus} Bell in:`;
-document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(mktStatus, dateObj);
-
-imgContainer.forEach((ele) => {
-  let children = ele.children;
-  let percentChangeTxt = children[1].innerText;
-  let regExp = /[-]/;
-  let dir = "";
-  if (regExp.test(percentChangeTxt)) {
-    children[1].style.color = "red";
-    dir = "down";
-  } else {
-    children[1].style.color = "#00e813";
-    dir = "up";
-  }
-
-  children[0].src = `/assets/icons8-${dir}-arrow-17.ico`;
-});
+document.querySelector( "body > #timer_container > h6").innerText = `${mktStatus} Bell in:`;
+document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(mktStatus);
 
 function clockImgInterval() {
   setInterval(() => {
-    document.querySelector("body>#timer_container>#market_clock").innerText =
-      startCountDown(mktStatus);
+    mktStatus = marketStatusCheck();
+    document.querySelector( "body > #timer_container > h6").innerText = `${mktStatus} Bell in:`;
+    document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(mktStatus);
   }, 1000);
 
   /* setInterval(() => {
@@ -146,8 +40,41 @@ function clockImgInterval() {
     });
   }, 8000);*/
 }
-
 clockImgInterval();
+
+//update prices of index;
+let updatePrices = (prices, runcnbc) => {
+  //get prices from cnbc;
+  let cnbcPrices = runcnbc();
+  console.log(cnbcPrices);
+  //iterate over prices;
+  for (let i = 0; i < prices.length; i++) {
+    let id = prices[i].id;
+
+    if (Object.hasOwn(cnbcPrices, id)) {
+      //update html tag
+      prices[i].innerText = cnbcPrices[id].value;
+    }
+  }
+};
+
+updatePrices(priceOfIndex, runCnbc);
+
+imgContainer.forEach((ele) => {
+  let children = ele.children;
+  let percentChangeTxt = children[1].innerText;
+  let regExp = /[-]/;
+  let dir = "";
+  if (regExp.test(percentChangeTxt)) {
+    children[1].style.color = "red";
+    dir = "down";
+  } else {
+    children[1].style.color = "#00e813";
+    dir = "up";
+  }
+
+  children[0].src = `/assets/icons8-${dir}-arrow-17.ico`;
+});
 
 h2Box.addEventListener("click", () => {
   const h2ChildNodes = h2Box.childNodes;
