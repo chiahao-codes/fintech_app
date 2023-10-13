@@ -7,7 +7,6 @@
   "scripts": {
     "build": "webpack --mode production && node ./src/js/proxy/server.js && node ./src/js/app.js",
     "serve": "nodemon ./src/js/proxy/server.js && node ./src/js/app.js"
-   
   },
   "repository": {
     "type": "git",

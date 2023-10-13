@@ -6,23 +6,19 @@ const router = express.Router();
 //measurements of profitability;
 //render stock profile ejs file;
 router.get("/:ticker", async (req, res, next) => {
+ 
   let ticker = req.params.ticker;
   //validation:
-  let result;
-  try {
-    result = await yahooFinance.quote(ticker);
-  } catch (error) {
-    console.warn(`Error:${error}`);
-    return
-  }
+  let result = await yahooFinance.quote(ticker).then((result) => { return result }).catch((e)=>{return e});
   
-   if (!result) {
+   if (!result || result.errors) {
      res.sendStatus(400);
      return;
    } else {
      if (result.displayName) {
        res.json([result.symbol, result.displayName]);
-     } else {
+     } 
+     else {
        res.json([result.symbol]);
      }
    }

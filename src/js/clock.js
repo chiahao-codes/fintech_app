@@ -12,7 +12,7 @@ const marketStatusCheck = () => {
   let status = "Opening";
 
   if (0 < dayOfWeek && dayOfWeek < 6) {
-    if (currHour === 6 && currMin >=30 || currHour<13) {
+    if (currHour === 6 && currMin >=30 || currHour<13 && currHour >=7) {
       //market is open:
       status = "Closing"
     }

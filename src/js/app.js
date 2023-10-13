@@ -1,65 +1,44 @@
 import "../styles/style.scss";
 import { marketStatusCheck, startCountDown } from "./clock.js";
-import updatePrices from "./pricing.js";
-import runCnbc from "./cnbc.js";
-import down17 from "../assets/down17.ico";
+import updateIndexData from "./pricing.js";
 import up17 from "../assets/up17.ico";
+import down17 from "../assets/down17.ico";
+import stockmkt from '../assets/stockmkt.png';
 
 const regExp = /[a-zA-Z]/;
+const tab = document.querySelector("head > #tab_logo");
 const h2Box = document.querySelector("header>h2");
-const index_container = document.querySelectorAll("body > section > .index_container");
 const priceOfIndex = document.querySelectorAll("body > section > .index_container > .price");
-console.log(priceOfIndex);
+const percentChangeIndex = document.querySelectorAll("body > section > .index_container > .img_container> .percent_change");
 const imgContainer = document.querySelectorAll("section > .index_container > .img_container");
 let mktStatus = marketStatusCheck();
 
+tab.href = stockmkt;
 document.querySelector( "body > #timer_container > h6").innerText = `${mktStatus} Bell in:`;
 document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(mktStatus);
 
-function clockImgInterval() {
+updateIndexData(priceOfIndex, "value");
+updateIndexData(percentChangeIndex, "change");
+updateIndexData(imgContainer, "arrow", up17, down17);
+
+const clockImgInterval = ()=>{
   setInterval(() => {
     mktStatus = marketStatusCheck();
-    document.querySelector( "body > #timer_container > h6").innerText = `${mktStatus} Bell in:`;
-    document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(mktStatus);
+    document.querySelector(
+      "body > #timer_container > h6"
+    ).innerText = `${mktStatus} Bell in:`;
+    document.querySelector("body>#timer_container>#market_clock").innerText =
+      startCountDown(mktStatus);
   }, 1000);
 
-  /* setInterval(() => {
-    imgContainer.forEach((ele) => {
-      let children = ele.children;
-      let percentChangeTxt = children[1].innerText;
-      let regExp = /[-]/;
-      let dir = "";
-      if (regExp.test(percentChangeTxt)) {
-        children[1].style.color = "red";
-        dir = "down";
-      } else {
-        children[1].style.color = "#00e813";
-        dir = "up";
-      }
-
-      children[0].src = `/assets/icons8-${dir}-arrow-17.ico`;
-    });
-  }, 8000);*/
+  setInterval(() => {
+    updateIndexData(priceOfIndex, "value");
+    updateIndexData(percentChangeIndex, "change");
+    updateIndexData(imgContainer, "arrow", up17, down17);
+  }, 5000);
 }
+
 clockImgInterval();
-
-updatePrices(priceOfIndex, runCnbc);
-
-imgContainer.forEach((ele) => {
-  let children = ele.children;
-  let percentChangeTxt = children[1].innerText;
-  let regExp = /[-]/;
-  let dir = "";
-  if (regExp.test(percentChangeTxt)) {
-    children[1].style.color = "red";
-    dir = "down";
-  } else {
-    children[1].style.color = "#00e813";
-    dir = "up";
-  }
-
-  children[0].src = `/assets/icons8-${dir}-arrow-17.ico`;
-});
 
 h2Box.addEventListener("click", () => {
   const h2ChildNodes = h2Box.childNodes;
