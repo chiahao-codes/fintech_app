@@ -18,8 +18,13 @@ module.exports = {
       title: "Ticqer",
       filename: "homepage.html",
       template: "src/home_template.html",
-      chunks: ["home"],
+      //chunks: ["home"],
     }),
+    new HtmlWebpackPlugin({
+      title: "Ticqer",
+      filename: "ticker.html",
+      template:"src/ticker_template.html"
+    })
   ],
   devtool: "source-map",
   module: {
