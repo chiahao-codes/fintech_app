@@ -5,8 +5,8 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "build": "webpack --mode production && node ./src/js/proxy/server.js && node ./src/js/app.js",
-    "serve": "nodemon ./src/js/proxy/server.js && node ./src/js/app.js"
+    "build": "webpack --mode production && node ./src/js/proxy/server.js && node ./src/js/home.js",
+    "serve": "nodemon ./src/js/proxy/server.js && node ./src/js/home.js"
   },
   "repository": {
     "type": "git",

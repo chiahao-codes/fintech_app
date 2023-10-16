@@ -15,12 +15,9 @@ router.get("/:ticker", async (req, res, next) => {
      res.sendStatus(400);
      return;
    } else {
-     if (result.displayName) {
-       res.json([result.symbol, result.displayName]);
-     } 
-     else {
-       res.json([result.symbol]);
-     }
+  
+       res.json([result.symbol, result.shortName, result.regularMarketPrice,result.postMarketPrice]);
+   
    }
   next();
 });
