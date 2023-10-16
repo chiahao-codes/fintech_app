@@ -120,7 +120,17 @@ body {
     font-family: 'Noto Sans', sans-serif;
     color: white;
   }
-  
+  body #mkt_status_notification_container{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:30px;
+  }
+
+    body>#mkt_status_notification_container> #mkt_status_notification{
+      color:var(--cold-white);
+    }
   body #index_section_container{
     display: grid;
     justify-content: center;
@@ -132,7 +142,7 @@ body {
     width: 100%;
     height: max-content;
     position: relative;
-    top:50px;
+    top:40px;
     color: var(--cold-white);
   }
 

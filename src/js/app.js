@@ -8,6 +8,7 @@ import stockmkt from '../assets/stockmkt.png';
 const regExp = /[a-zA-Z]/;
 const tab = document.querySelector("head > #tab_logo");
 const h2Box = document.querySelector("header>h2");
+const mktNotification = document.querySelector("body > #mkt_status_notification_container > #mkt_status_notification");
 const priceOfIndex = document.querySelectorAll("body > section > .index_container > .price");
 const percentChangeIndex = document.querySelectorAll("body > section > .index_container > .img_container> .percent_change");
 const imgContainer = document.querySelectorAll("section > .index_container > .img_container");
@@ -16,6 +17,16 @@ let mktStatus = marketStatusCheck();
 tab.href = stockmkt;
 document.querySelector( "body > #timer_container > h6").innerText = `${mktStatus} Bell in:`;
 document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(mktStatus);
+
+let mktStatusNotification = (mktstatus, mktnotify) => {
+  if (mktstatus === "Opening") {
+    mktnotify.innerText = `U.S. markets closed`
+  } else {
+    mktnotify.innerText = `U.S. markets open`
+  }
+}
+
+mktStatusNotification(mktStatus, mktNotification);
 
 updateIndexData(priceOfIndex, "value");
 updateIndexData(percentChangeIndex, "change");
@@ -29,6 +40,7 @@ const clockImgInterval = ()=>{
     ).innerText = `${mktStatus} Bell in:`;
     document.querySelector("body>#timer_container>#market_clock").innerText =
       startCountDown(mktStatus);
+    mktStatusNotification(mktStatus, mktNotification);
   }, 1000);
 
   setInterval(() => {

@@ -36,12 +36,13 @@ let updateIndexData = async (iterable, prop, imgUp, imgDown, runcnbc = cnbcMarke
 
   for (let i = 0; i < iterable.length; i++) {
     let attr = iterable[i].classList[0];
+
     if (cnbc[attr]) {
-      if (prop === "value") {
+      if (prop === "value" && cnbc[attr].value) {
         iterable[i].innerText = cnbc[attr].value;
       }
 
-      if (prop === "change") {
+      if (prop === "change" && cnbc[attr].change) {
         iterable[i].innerText = cnbc[attr].change;
       }
     }
@@ -51,6 +52,7 @@ let updateIndexData = async (iterable, prop, imgUp, imgDown, runcnbc = cnbcMarke
       let dir = "";
       let pctChangeTxt = iterable[i].innerText;
       let children = iterable[i].children;
+      
       if (regExp.test(pctChangeTxt)) {
         children[1].style.color = "red";
         dir = imgDown;

@@ -1,33 +1,38 @@
-var currFullDate = new Date();
-var currDate = currFullDate.getDate();
-var currMonth = currFullDate.getMonth();
-var currYear = currFullDate.getFullYear();
-var dayOfWeek = currFullDate.getDay();
-var currHour = currFullDate.getHours();
-var currMin = currFullDate.getMinutes();
-var nextDay = currFullDate.getDate() + 1;
-
 //check market status:
 const marketStatusCheck = () => {
+  let currFullDate = new Date();
+
+  let dayOfWeek = currFullDate.getDay();
+  let currHour = currFullDate.getHours();
+  let currMin = currFullDate.getMinutes();
+
   let status = "Opening";
 
   if (0 < dayOfWeek && dayOfWeek < 6) {
-    if (currHour === 6 && currMin >=30 || currHour<13 && currHour >=7) {
+    if ((currHour === 6 && currMin >= 30) || (currHour < 13 && currHour >= 7)) {
       //market is open:
-      status = "Closing"
+      status = "Closing";
     }
   }
 
-  return status
-  
-}
+  return status;
+};
 
 let startCountDown = (mkt) => {
+  let currFullDate = new Date();
+  let currDate = currFullDate.getDate();
+  let currMonth = currFullDate.getMonth();
+  let currYear = currFullDate.getFullYear();
+  let dayOfWeek = currFullDate.getDay();
+  let currHour = currFullDate.getHours();
+
+  let nextDay = currFullDate.getDate() + 1;
   //dayOfWeek, nextDay, currDate, currHour, currYear, currMonth
   let openingBellCountdown = () => {
     //if next day is a weekend:
     if (dayOfWeek === 5) nextDay = currDate + 3;
     if (dayOfWeek === 6) nextDay = currDate + 2;
+    if (dayOfWeek === 0) nextDay = currDate + 1;
 
     if (0 <= currHour && currHour <= 6) {
       nextDay = currDate;
@@ -97,4 +102,4 @@ let startCountDown = (mkt) => {
   return counter;
 };
 
-export {marketStatusCheck, startCountDown}
+export { marketStatusCheck, startCountDown };
