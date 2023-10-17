@@ -1,2 +1,2 @@
 import "../styles/style.scss";
-import yahooFinance from "yahoo-finance2";
+//import yahooFinance from "yahoo-finance2";
