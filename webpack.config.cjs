@@ -6,7 +6,7 @@ module.exports = {
   mode: "development",
   entry: {
     home: path.resolve("C:/Desktop/Ticqer", "src/js/home.js"),
-    ticker:""
+    ticker: path.resolve("C:/Desktop/Ticqer", "src/js/ticker.js"),
   },
   output: {
     path: path.resolve("C:/Desktop/Ticqer", "dist"),
@@ -19,13 +19,13 @@ module.exports = {
       title: "Ticqer",
       filename: "homepage.html",
       template: "src/home_template.html",
-      chunks: ["home"]
+      chunks: ["home"],
     }),
     new HtmlWebpackPlugin({
       title: "Ticqer",
       filename: "ticker.html",
-      template:"src/ticker_template.html"
-    })
+      template: "src/ticker_template.html",
+    }),
   ],
   devtool: "source-map",
   module: {

@@ -1,6 +1,6 @@
 import express from 'express';
-import router from '../ticker.js';
-import routerM from '../homepage.js';
+import router from '../ticker-router.js';
+import routerM from '../home-router.js';
 const PORT = process.env.PORT || 3000;
 const app = express();
 
