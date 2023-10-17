@@ -60,8 +60,6 @@ let updateIndexData = async (iterable, prop, imgUp, imgDown, runcnbc = cnbcMarke
         children[1].style.color = "#00e813";
         dir = imgUp;
       }
-
-      console.log("img")
       children[0].src = dir;
     }
   }
