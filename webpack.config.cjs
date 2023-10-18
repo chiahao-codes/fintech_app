@@ -25,6 +25,7 @@ module.exports = {
       title: "Ticqer",
       filename: "ticker.html",
       template: "src/ticker_template.html",
+      chunks:["ticker"]
     }),
   ],
   devtool: "source-map",
@@ -32,7 +33,7 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ["style-loader","css-loader", "sass-loader"],
       },
       {
         test: /\.(png|svg|jpg|ico)$/i,

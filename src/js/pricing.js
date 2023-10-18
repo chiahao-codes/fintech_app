@@ -39,7 +39,10 @@ let updateIndexData = async (iterable, prop, imgUp, imgDown, runcnbc = cnbcMarke
 
     if (cnbc[attr]) {
       if (prop === "value" && cnbc[attr].value) {
-        iterable[i].innerText = cnbc[attr].value;
+        let value = parseFloat(cnbc[attr].value);
+        let formatCcy = new Intl.NumberFormat("en-US");
+        let cnbcValue = formatCcy.format(value);
+        iterable[i].innerText = cnbcValue;
       }
 
       if (prop === "change" && cnbc[attr].change) {

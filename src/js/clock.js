@@ -1,7 +1,14 @@
 //check market status:
+const mktStatusNotification = (mktstatus, mktnotify) => {
+  if (mktstatus === "Opening") {
+    mktnotify.innerText = `U.S. markets closed`;
+  } else {
+    mktnotify.innerText = `U.S. markets open`;
+  }
+};
+
 const marketStatusCheck = () => {
   let currFullDate = new Date();
-
   let dayOfWeek = currFullDate.getDay();
   let currHour = currFullDate.getHours();
   let currMin = currFullDate.getMinutes();
@@ -102,4 +109,4 @@ let startCountDown = (mkt) => {
   return counter;
 };
 
-export { marketStatusCheck, startCountDown };
+export { marketStatusCheck, startCountDown, mktStatusNotification};

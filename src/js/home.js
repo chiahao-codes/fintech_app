@@ -1,5 +1,5 @@
 import "../styles/style.scss";
-import { marketStatusCheck, startCountDown } from "./clock.js";
+import { marketStatusCheck, startCountDown, mktStatusNotification } from "./clock.js";
 import updateIndexData from "./pricing.js";
 import up17 from "../assets/up17.ico";
 import down17 from "../assets/down17.ico";
@@ -18,21 +18,8 @@ tab.href = stockmkt;
 document.querySelector( "body > #timer_container > h6").innerText = `${mktStatus} Bell in:`;
 document.querySelector("body>#timer_container>#market_clock").innerText = startCountDown(mktStatus);
 
-let mktStatusNotification = (mktstatus, mktnotify) => {
-  if (mktstatus === "Opening") {
-    mktnotify.innerText = `U.S. markets closed`
-  } else {
-    mktnotify.innerText = `U.S. markets open`
-  }
-}
-
 mktStatusNotification(mktStatus, mktNotification);
-
-updateIndexData(priceOfIndex, "value");
-updateIndexData(percentChangeIndex, "change");
-updateIndexData(imgContainer, "arrow", up17, down17);
-
-const clockImgInterval = ()=>{
+const clockImgInterval = () => {
   setInterval(() => {
     mktStatus = marketStatusCheck();
     document.querySelector(
@@ -48,9 +35,22 @@ const clockImgInterval = ()=>{
     updateIndexData(percentChangeIndex, "change");
     updateIndexData(imgContainer, "arrow", up17, down17);
   }, 5000);
-}
+  
+};
 
-clockImgInterval();
+updateIndexData(priceOfIndex, "value")
+  .then(() => {
+    updateIndexData(percentChangeIndex, "change");
+  })
+  .then(() => {
+    updateIndexData(imgContainer, "arrow", up17, down17);
+  }).then(() => {
+    clockImgInterval();
+  })
+  .catch((e) => {
+    console.log(e);
+    return;
+  });
 
 h2Box.addEventListener("click", () => {
   const h2ChildNodes = h2Box.childNodes;

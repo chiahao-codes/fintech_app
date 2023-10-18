@@ -1,5 +1,5 @@
 import express from "express";
-import yahooFinance from "yahoo-finance2";
+import path from "path";
 const router = express.Router();
 
 //get data for: income statement, balance sheet, cash flow;
@@ -9,17 +9,18 @@ router.get("/:ticker", async (req, res, next) => {
  
   let ticker = req.params.ticker;
   //validation:
-  let result = await yahooFinance.quote(ticker).then((result) => { return result }).catch((e)=>{return e});
-  
-   if (!result || result.errors) {
-     res.sendStatus(400);
-     return;
-   } else {
-  
-       res.json([result.symbol, result.shortName, result.regularMarketPrice,result.postMarketPrice]);
+  //run an imported function that grabs data based on the ticker, then send html file;
+ // let result = await yahooFinance.quote(ticker).then((result) => { return result }).catch((e)=>{return e});
+  return res.sendFile(path.join("C:/Desktop/Ticqer", "/dist/ticker.html"));
    
-   }
-  next();
 });
 
 export default router
+
+
+/**
+ *  if (!result || result.errors) {
+     res.sendStatus(400);
+     return;
+   } else {
+ */
