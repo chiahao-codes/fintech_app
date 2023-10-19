@@ -13,7 +13,7 @@ next();
 
 app.use(express.json());
 app.use("/", routerM);
-app.use("/stock", router);
+app.use("/stock/:ticker", router);
 
 
 app.listen(PORT, () => {

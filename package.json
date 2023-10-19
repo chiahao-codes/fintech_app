@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/chiahao-codes/fintech_app#readme",
   "devDependencies": {
+    "@vue/preload-webpack-plugin": "^2.0.0",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
     "jest": "^29.6.1",

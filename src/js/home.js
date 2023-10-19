@@ -44,7 +44,8 @@ updateIndexData(priceOfIndex, "value")
   })
   .then(() => {
     updateIndexData(imgContainer, "arrow", up17, down17);
-  }).then(() => {
+  })
+  .then(() => {
     clockImgInterval();
   })
   .catch((e) => {
@@ -130,7 +131,7 @@ h2Box.addEventListener("keydown", (e) => {
       //enter the ticker string into the url parameter
       //grab the URL;
       let url = window.location.href;
-      let tickerSearch = url + "stock/" + textString;
+      let tickerSearch = url + "stock" + "?ticker=" + textString;
       window.location.href = tickerSearch;
     }
   }
@@ -153,7 +154,7 @@ h2Box.addEventListener("keyup", (e) => {
   let divBr = document.querySelector("h2 div");
   let brList = document.querySelectorAll("h2 br");
   if (e.key === "Backspace" || e.key === "Enter") {
-    if (brList.length > 0) {
+    if (brList && brList.length > 0) {
       for (br of brList) {
         if (br) br.remove();
       }
