@@ -1,7 +1,7 @@
 {
   "name": "ticqer",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "home.js",
   "private": "true",
   "type": "module",
   "scripts": {

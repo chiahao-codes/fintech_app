@@ -2,12 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PreloadWebpackPlugin = require("@vue/preload-webpack-plugin");
 
-
 module.exports = {
   mode: "development",
   entry: {
     home: path.resolve("C:/Desktop/Ticqer", "src/js/home.js"),
     ticker: path.resolve("C:/Desktop/Ticqer", "src/js/ticker.js"),
+   
   },
   output: {
     path: path.resolve("C:/Desktop/Ticqer", "dist"),
@@ -30,15 +30,6 @@ module.exports = {
       chunks: ["ticker"],
       scriptLoading: "defer",
     }),
-    new PreloadWebpackPlugin({
-      rel: "preload",
-      as(entry) {
-        if (/\.scss$/.test(entry)) return "style";
-        if (/\.woff$/.test(entry)) return "font";
-        if (/\.png$/.test(entry)) return "image";
-        return "script";
-      },
-    }),
   ],
   devtool: "source-map",
   module: {
@@ -60,3 +51,15 @@ module.exports = {
     node: true,
   },
 };
+
+/**
+ *   new PreloadWebpackPlugin({
+      rel: "preload",
+      as(entry) {
+        if (/\.scss$/.test(entry)) return "style";
+        if (/\.woff$/.test(entry)) return "font";
+        if (/\.png$/.test(entry)) return "image";
+        return "script";
+      },
+    }),
+ */
