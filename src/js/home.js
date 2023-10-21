@@ -131,8 +131,8 @@ h2Box.addEventListener("keydown", (e) => {
       //enter the ticker string into the url parameter
       //grab the URL;
       let url = window.location.href;
-      let tickerSearch = url + "ticker";
-      //+ textString
+      let tickerSearch = `${url}ticker?symbol=${textString}`; 
+      //
       window.location.href = tickerSearch;
     }
   }

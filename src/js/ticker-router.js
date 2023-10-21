@@ -2,7 +2,8 @@ import express from "express";
 import path from "path";
 const router = express.Router();
 
-router.get('/ticker', (req, res, next) => {
+
+router.get('', (req, res) => {
   return res.sendFile(path.join("C:/Desktop/Ticqer", "/dist/ticker.html"));
 });
 
