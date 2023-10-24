@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "webpack --mode production && node ./src/js/proxy/server.js && node ./src/js/home.js",
-    "serve": "nodemon ./src/js/proxy/server.js && node ./src/js/home.js"
+    "serve": "nodemon ./src/js/proxy/server.js && node ./src/js/home.js",
+    "help": "webpack --help"
   },
   "repository": {
     "type": "git",
@@ -34,7 +35,8 @@
     "cnbc-market": "^3.0.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "yahoo-finance2": "^2.8.0"
+    "yahoo-finance-webscraper": "^3.0.1",
+    "yf-web-scraper": "^1.21.1"
   },
   "keywords": [],
   "description": ""

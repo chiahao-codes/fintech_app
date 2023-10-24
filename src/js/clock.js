@@ -31,19 +31,16 @@ let startCountDown = (mkt) => {
   let currMonth = currFullDate.getMonth();
   let currYear = currFullDate.getFullYear();
   let dayOfWeek = currFullDate.getDay();
-  let currHour = currFullDate.getHours();
+  
 
-  let nextDay = currFullDate.getDate() + 1;
+  let nextDay = currDate + 1;
   //dayOfWeek, nextDay, currDate, currHour, currYear, currMonth
   let openingBellCountdown = () => {
     //if next day is a weekend:
+    
     if (dayOfWeek === 5) nextDay = currDate + 3;
     if (dayOfWeek === 6) nextDay = currDate + 2;
     if (dayOfWeek === 0) nextDay = currDate + 1;
-
-    if (0 <= currHour && currHour <= 6) {
-      nextDay = currDate;
-    }
 
     //set next morning: 6:30am PST
     let openingBell = new Date(
@@ -60,6 +57,7 @@ let startCountDown = (mkt) => {
     let timeUntilOpening = openingBell - now;
 
     let days = Math.floor(timeUntilOpening / (1000 * 60 * 60 * 24));
+    
     let hours = Math.floor(
       (timeUntilOpening % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );

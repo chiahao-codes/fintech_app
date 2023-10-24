@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const PreloadWebpackPlugin = require("@vue/preload-webpack-plugin");
 
 module.exports = {
@@ -7,7 +8,6 @@ module.exports = {
   entry: {
     home: path.resolve("C:/Desktop/Ticqer", "src/js/home.js"),
     ticker: path.resolve("C:/Desktop/Ticqer", "src/js/ticker.js"),
-   
   },
   output: {
     path: path.resolve("C:/Desktop/Ticqer", "dist"),
@@ -50,6 +50,7 @@ module.exports = {
   externalsPresets: {
     node: true,
   },
+
 };
 
 /**
