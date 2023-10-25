@@ -1,9 +1,8 @@
-import Yahoo from "yahoo-finance-webscraper";
+import { financials } from "barchart-dot-com";
 
 let yf2 = async (ticker) => {
-    let quote = await Yahoo.getSingleStockInfo(ticker).then((data) => { return data }).catch((e) => { console.log(e); return });
-   
-    return quote
+    let result = await financials.income(ticker).then((data) => { return data }).catch((e) => { console.log(e) });
+    return result
 }
 
 export default yf2

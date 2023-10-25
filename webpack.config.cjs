@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PreloadWebpackPlugin = require("@vue/preload-webpack-plugin");
@@ -30,6 +31,7 @@ module.exports = {
       chunks: ["ticker"],
       scriptLoading: "defer",
     }),
+    
   ],
   devtool: "source-map",
   module: {
@@ -50,11 +52,16 @@ module.exports = {
   externalsPresets: {
     node: true,
   },
-
+  target:"node"
 };
 
 /**
- *   new PreloadWebpackPlugin({
+ * new webpack.ProvidePlugin({
+      require: "require",
+    }), 
+ * 
+ * 
+ *  new PreloadWebpackPlugin({
       rel: "preload",
       as(entry) {
         if (/\.scss$/.test(entry)) return "style";
