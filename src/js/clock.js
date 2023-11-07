@@ -31,9 +31,10 @@ let startCountDown = (mkt) => {
   let currMonth = currFullDate.getMonth();
   let currYear = currFullDate.getFullYear();
   let dayOfWeek = currFullDate.getDay();
-  
-
+  let currHour = currFullDate.getHours()
   let nextDay = currDate + 1;
+  if (currHour >= 0 && currHour <= 6) nextDay = currDate;
+  
   //dayOfWeek, nextDay, currDate, currHour, currYear, currMonth
   let openingBellCountdown = () => {
     //if next day is a weekend:

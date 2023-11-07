@@ -1,14 +1,17 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const PreloadWebpackPlugin = require("@vue/preload-webpack-plugin");
 
 module.exports = {
   mode: "development",
   entry: {
     home: path.resolve("C:/Desktop/Ticqer", "src/js/home.js"),
-    ticker: path.resolve("C:/Desktop/Ticqer", "src/js/ticker.js"),
+    ticker: {
+      import: [
+        path.resolve("C:/Desktop/Ticqer", "src/js/ticker.js"),
+        path.resolve("C:/Desktop/Ticqer", "src/js/ticker2.js"),
+      ],
+    },
   },
   output: {
     path: path.resolve("C:/Desktop/Ticqer", "dist"),
@@ -31,7 +34,7 @@ module.exports = {
       chunks: ["ticker"],
       scriptLoading: "defer",
     }),
-    
+  
   ],
   devtool: "source-map",
   module: {
@@ -49,16 +52,42 @@ module.exports = {
   stats: {
     errorDetails: true,
   },
+
   externalsPresets: {
     node: true,
   },
-  target:"node"
+  externalsType: "node-commonjs",
+  externals: {
+    "url":"url"
+  },
+  target: "node",
+
+  //
+  //
 };
 
 /**
- * new webpack.ProvidePlugin({
-      require: "require",
-    }), 
+ * 
+ * new NodePolyfillPlugin(),
+ *    
+ *   externals: {
+    "barchart-dot-com":"barchart-dot-com"
+  }
+ *    resolve: {
+    fallback: {
+      tls: false,
+      net: false,
+      http2: false,
+      stream: false,
+      https: false,
+      http: false,
+      fs: false,
+      zlib: false,
+      os: false,
+      dns: false,
+    },
+  },
+ *
  * 
  * 
  *  new PreloadWebpackPlugin({

@@ -5,6 +5,7 @@ import up17 from "../assets/up17.ico";
 import down17 from "../assets/down17.ico";
 import stockmkt from '../assets/stockmkt.png';
 
+
 const regExp = /[a-zA-Z]/;
 const tab = document.querySelector("head > #tab_logo");
 const h2Box = document.querySelector("header>h2");
